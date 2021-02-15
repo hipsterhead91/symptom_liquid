@@ -1,38 +1,62 @@
-{{ content_for_footer }}
+<!-- {%- assign social_icons = false -%}
+{%- assign inline_list = false -%}
+{%- assign locale_selector = false -%}
+{%- assign currency_selector = false -%}
+{%- assign show_payment_icons = false -%}
+{%- assign show_selectors = false -%} -->
+
 <footer class="footer footer_hidden">
-    <nav class="footer__left-half">
-      <ul class="footer__nav-list">
-        <li class="footer__nav-list-element"><a href="./pages/about_us/about_us.html" class="footer__nav-link">О нас</a>
-        </li>
-        <li class="footer__nav-list-element"><a href="./pages/contacts/contacts.html" class="footer__nav-link">Контакты</a>
-        </li>
-      </ul>
-      <ul class="footer__nav-list">
-        <li class="footer__nav-list-element"><a href="./pages/warranty_and_returns/warranty_and_returns.html"
-            class="footer__nav-link">Гарантия и возврат</a></li>
-        <li class="footer__nav-list-element"><a href="./pages/shipping_and_payment/shipping_and_payment.html"
-            class="footer__nav-link">Доставка и оплата</a></li>
-        <li class="footer__nav-list-element"><a href="./pages/care_for_jewelry/care_for_jewelry.html"
-            class="footer__nav-link">Уход за украшениями</a></li>
-      </ul>
-      <ul class="footer__nav-list">
-        <li class="footer__nav-list-element"><a href="./pages/offer/offer.html" class="footer__nav-link">Оферта</a></li>
-        <li class="footer__nav-list-element"><a href="./pages/confidentiality/confidentiality.html"
-            class="footer__nav-link">Конфиденциальность</a></li>
-      </ul>
-    </nav>
-    <ul class="footer__right-half">
-      <li class="footer__contact">
-        <h3 class="footer__contact-type">Телефон:</h3>
-        <a class="footer__contact-data" href="tel:+79151398563">+79151398563</a>
+  <nav class="footer__left-half">
+    <ul class="footer__nav-list">
+      <li class="footer__nav-list-element"><a href="./pages/about_us.html" class="footer__nav-link">О нас</a>
       </li>
-      <li class="footer__contact">
-        <h3 class="footer__contact-type">E-mail:</h3>
-        <a class="footer__contact-data" href="mailto:hello@symptom.jewelry">HELLO@SYMPTOM.JEWELRY</a>
-      </li>
-      <li class="footer__contact">
-        <h3 class="footer__contact-type">Подписаться на нас:</h3>
-        <a class="footer__contact-data" href="https://www.instagram.com/symptom.jewelry/">INSTAGRAM</a>
+      <li class="footer__nav-list-element"><a href="./pages/contacts.html" class="footer__nav-link">Контакты</a>
       </li>
     </ul>
-  </footer>
+    <ul class="footer__nav-list">
+      <li class="footer__nav-list-element"><a href="./pages/warranty_and_returns.html"
+          class="footer__nav-link">Гарантия и возврат</a></li>
+      <li class="footer__nav-list-element"><a href="./pages/shipping_and_payment.html"
+          class="footer__nav-link">Доставка и оплата</a></li>
+      <li class="footer__nav-list-element"><a href="./pages/care_for_jewelry.html" class="footer__nav-link">Уход за
+          украшениями</a></li>
+    </ul>
+    <ul class="footer__nav-list">
+      <li class="footer__nav-list-element"><a href="./pages/offer.html" class="footer__nav-link">Оферта</a></li>
+      <li class="footer__nav-list-element"><a href="./pages/confidentiality.html"
+          class="footer__nav-link">Конфиденциальность</a></li>
+    </ul>
+  </nav>
+
+  <ul class="footer__right-half">
+    <li class="footer__contact">
+      <h3 class="footer__contact-type">Телефон:</h3>
+      <a class="footer__contact-data" href="tel:+79151398563">+79151398563</a>
+    </li>
+    <li class="footer__contact">
+      <h3 class="footer__contact-type">E-mail:</h3>
+      <a class="footer__contact-data" href="mailto:hello@symptom.jewelry">HELLO@SYMPTOM.JEWELRY</a>
+    </li>
+    <li class="footer__contact">
+      <h3 class="footer__contact-type">Подписаться на нас:</h3>
+      <a class="footer__contact-data" href="https://www.instagram.com/symptom.jewelry/">INSTAGRAM</a>
+    </li>
+  </ul>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+
+{% endjavascript %}

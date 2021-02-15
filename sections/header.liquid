@@ -1,18 +1,55 @@
-{{ content_for_header }}
-<header class="header">
-    <div class="header__fraction">
-      <a class="header__logo header__logo_white" href="./index.html"></a>
-    </div>
-    <div class="header__fraction">
-      <button class="header__button header__button_white">БРЕНДЫ</button>
-      <button class="header__button header__button_white">КАТЕГОРИИ</button>
-    </div>
-    <div class="header__fraction">
-      <button class="header__button header__button_white">ПОДПИСАТЬСЯ</button>
-    </div>
-    <div class="header__fraction">
-      <button class="header__button header__button_white">ВОЙТИ</button>
-      <a class="header__button header__button_white" href="./pages/wishes/wishes.html">ЖЕЛАНИЯ</a>
-      <a class="header__button header__button_white" href="./pages/cart/cart.html">КОРЗИНА(00)</a>
-    </div>
+
+<header class="header header_two-colored">
+  <div class="header__fraction">
+    <a id="header-logo" class="header__logo header__logo_white" href="./index.html"></a>
+  </div>
+  <div class="header__fraction">
+    <button id="header-brands-button" class="header__button header__button_white" type='button'>
+      <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
+      БРЕНДЫ
+    </button>
+    <button id="header-categories-button" class="header__button header__button_white" type='button'>
+      <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
+      КАТЕГОРИИ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-subscribe-button" class="header__button header__button_white" type='button'>
+      <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ПОДПИСАТЬСЯ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-login-button" class="header__button header__button_login header__button_white" type='button'>
+      <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ВОЙТИ
+    </button>
+    <a id="header-wishes-button" class="header__button header__button_wishes header__button_white"
+      href="./pages/wishes.html">
+      <span id="wishes-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
+      ЖЕЛАНИЯ
+    </a>
+    <a id="header-cart-button" class="header__button header__button_cart header__button_white"
+      href="./pages/cart.html">
+      <span id="cart-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
+      КОРЗИНА(00)
+    </a>
+  </div>
 </header>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+
+{% endjavascript %}
