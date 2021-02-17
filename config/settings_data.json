@@ -6,13 +6,6 @@
         "settings": {
         }
       },
-      "hero-1": {
-        "type": "hero",
-        "settings": {
-          "hero_size": "large",
-          "text_size": "large"
-        }
-      },
       "feature-row": {
         "type": "feature-row",
         "settings": {
@@ -49,13 +42,7 @@
       "collection": {
         "type": "collection",
         "settings": {
-          "grid": 4
-        }
-      },
-      "hero-2": {
-        "type": "hero",
-        "settings": {
-          "text_size": "large"
+          "grid": 20
         }
       },
       "quotes": {

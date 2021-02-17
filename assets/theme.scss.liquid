@@ -914,14 +914,14 @@ button:hover, a:hover {
 .header__logo {
   width: 139px;
   height: 41px;
-  background-image: url(./images/logo-black.png);
+  background-image: url({{ 'logo-black.jpg' | asset_img_url: '276x82' }});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .header__logo_white {
-  background-image: url(./images/logo-white.png);
+  background-image: url({{ 'logo-white.jpg' | asset_img_url: '276x82' }});
 }
 
 .header__button {
@@ -1185,22 +1185,23 @@ button:hover, a:hover {
 .section {
   background-position: top;
   background-size: cover;
+  height: 1015px;
 }
 
 .section_1 {
-  background-image: url({{ 'fullpage-section-1.jpg' | asset_url }});
+  background-image: url({{ 'fullpage-section-1.jpg' | asset_img_url: 'master' }});
 }
 
 .section_2 {
-  background-image: url(./images/content/fullpage-section-2.jpg);
+  background-image: url({{ 'fullpage-section-2.jpg' | asset_img_url: 'master' }});
 }
 
 .section_3 {
-  background-image: url(./images/content/fullpage-section-3.jpg);
+  background-image: url({{ 'fullpage-section-3.jpg' | asset_img_url: 'master' }});
 }
 
 .section_4 {
-  background-image: url(./images/content/fullpage-section-4.jpg);
+  background-image: url({{ 'fullpage-section-4.jpg' | asset_img_url: 'master' }});
 }
 
 .section__info {
@@ -2216,4 +2217,14 @@ button:hover, a:hover {
 
 .slide__image {
   width: 100%;
+}
+
+/* add by me */
+
+.grid-collection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.grid-product {
+  display: grid;
 }
