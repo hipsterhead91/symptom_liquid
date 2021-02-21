@@ -8,9 +8,6 @@
 }
 
 
-
-
-
 /* DEFAULT STYLES */
 
 * {
@@ -914,14 +911,14 @@ button:hover, a:hover {
 .header__logo {
   width: 139px;
   height: 41px;
-  background-image: url({{ 'logo-black.jpg' | asset_img_url: '276x82' }});
+  background-image: url({{ 'logo-black.png' | asset_img_url: '276x82' }});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .header__logo_white {
-  background-image: url({{ 'logo-white.jpg' | asset_img_url: '276x82' }});
+  background-image: url({{ 'logo-white.png' | asset_img_url: '276x82' }});
 }
 
 .header__button {
@@ -1272,7 +1269,7 @@ button:hover, a:hover {
 .section__paragraph {
   font-size: 16px;
   color: #FAFAFA;
-  user-select: none; 
+  user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -1917,7 +1914,7 @@ button:hover, a:hover {
   box-sizing: border-box;
   outline: none;
   background-color: #FAFAFA;
-  background-image: url(./images/edit-button-cross.svg);
+  background-image: url({{ 'icon-exit-white.liquid' | asset_img_url: 'master' }});;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -2218,6 +2215,10 @@ button:hover, a:hover {
 .slide__image {
   width: 100%;
 }
+
+
+
+
 
 /* add by me */
 

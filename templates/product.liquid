@@ -1,29 +1,44 @@
-{% assign current_variant = product.selected_or_first_available_variant %}
-{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-<img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
-{% for image in product.images %}
-  <a href="{{ image.src | img_url: 'large' }}">
-    <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
-  </a>
-{% endfor %}
 <h1>{{ product.title }}</h1>
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-  <select name="id" id="productSelect">
-    {% for variant in product.variants %}
-      {% if variant.available %}
-        <option value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
-      {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - sold out
-        </option>
-      {% endif %}
-    {% endfor %}
-  </select>
-  {{ current_variant.price | money }}
-  <label for="Quantity">quantity</label>
-  <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
-</form>
+
 <div>{{ product.description }}</div>
+
+<div class="item">
+  <div class="item__info">
+    <button class="back-button">
+      <div class="back-button__arrow"></div><span class="back-button__text">К бренду</span>
+    </button>
+    <h1 class="item__brand">Заколка</h1>
+    <h2 class="item__name"></h2>
+    <p class="item__description">Многофункциональный серебряный браслет с холодной эмалью. С помощью цепочки-регулятора его также можно использовать как чокер и браслет на ногу. Ручная работа. Ограниченный тираж.</p>
+    <span class="item__status">In stock</span>
+    <span class="item__price">19000 Rub.</span>
+    <a href="./shipping_and_payment.html" class="item__shipping">Доставка и возврат</a>
+  </div>
+
+  <div class="item__image-wrapper">
+    <img class="item__image" src="../images/content/bracelet-crumpled.jpg" alt="Prayer">
+  </div>
+
+  <div class="item__order">
+    <h4 class="item__radio-heading">Материал:</h4>
+    <div class="materials materials_bracelet">
+      <label class="materials__material">
+        <input class="materials__true-radio" type="radio" name="material">
+        <span class="materials__fake-radio materials__fake-radio_bronze">Bronze</span>
+      </label>
+      <label class="materials__material">
+        <input class="materials__true-radio" type="radio" name="material">
+        <span class="materials__fake-radio materials__fake-radio_silver">Silver</span>
+      </label>
+    </div>
+    <p class="item__preorder-info">
+      Размер который вы выбрали отсутсвует в наличии. Но вы можете оформить предзаказ!
+      После оформления заказа мы свяжемся с вами, чтобы обсудить все важные детали.
+    </p>
+    <div class="item__buttons item__buttons_bracelet">
+      <button class="circle-like-button"></button>
+      <button class="black-button">Предзаказ</button>
+    </div>
+  </div>
+</div>
+

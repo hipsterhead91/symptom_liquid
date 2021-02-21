@@ -1,1 +1,37 @@
 <!-- /templates/customers/account.liquid -->
+<form class="profile">
+    <div class="profile__left-half">
+      <div class="profile__alignment">
+        <div class="input input_profile">
+          <h4 class="input__heading">Имя:</h4>
+          <input class="input__field" type="text" placeholder="Ваше имя" value="Иван" readonly>
+          <span class="input__error">Имя слишком короткое</span>
+        </div>
+        <div class="input input_profile">
+          <h4 class="input__heading">Фамилия:</h4>
+          <input class="input__field" type="text" placeholder="Ваша фамилия" value="Петров" readonly>
+          <span class="input__error">Фамилия слишком короткая</span>
+        </div>
+      </div>
+      <div class="input input_profile-wide">
+        <h4 class="input__heading">E-mail:</h4>
+        <input class="input__field" type="email" placeholder="Ваш E-mail" value="ivanmail@gmail.com" readonly>
+        <span class="input__error">Некорректный адрес почты</span>
+      </div>
+      <button class="hollow-button hollow-button_profile">Выйти</button>
+    </div>
+
+    <div class="profile__right-half">
+      <div class="input input_profile-wide">
+        <h4 class="input__heading">Имя пользователя:</h4>
+        <input class="input__field" type="text" placeholder="Ваше имя пользователя" value="Nagibator-2000" readonly>
+        <span class="input__error">Имя слишком короткое</span>
+      </div>
+      <div class="input input_profile-wide">
+        <h4 class="input__heading">Пароль:</h4>
+        <input class="input__field" type="password" placeholder="Ваш пароль" value="123456789" readonly>
+        <span class="input__error">Введите пароль</span>
+      </div>
+      <button class="black-button">Изменить</button>
+    </div>
+  </form>
