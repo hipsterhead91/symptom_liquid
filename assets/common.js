@@ -70,51 +70,67 @@ function hideAllPopups() {
 	headerTurnsWhite();
 };
 
-headerBrandsButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(brandsOutline);
-	showPopup(brandsMenu, 'menu_hidden');
-});
+if(headerBrandsButton){
+	headerBrandsButton.addEventListener('click', () => {
+		hideAllPopups();
+		showOutline(brandsOutline);
+		showPopup(brandsMenu, 'menu_hidden');
+	});
+};
 
-headerCategoriesButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(categoriesOutline);
-	showPopup(categoriesMenu, 'menu_hidden');
-});
+if(headerCategoriesButton){
+	headerCategoriesButton.addEventListener('click', () => {
+		hideAllPopups();
+		showOutline(categoriesOutline);
+		showPopup(categoriesMenu, 'menu_hidden');
+	});
+};
 
-headerSubscribeButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(subscribeOutline);
-	showPopup(subscribeForm, 'form_hidden');
-});
+if(headerSubscribeButton){
+	headerSubscribeButton.addEventListener('click', () => {
+		hideAllPopups();
+		showOutline(subscribeOutline);
+		showPopup(subscribeForm, 'form_hidden');
+	});
+};
 
-headerLogInButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(logInOutline);
-	showPopup(logInForm, 'form_hidden');
-});
+if(headerLogInButton){
+	headerLogInButton.addEventListener('click', () => {
+		hideAllPopups();
+		showOutline(logInOutline);
+		showPopup(logInForm, 'form_hidden');
+	});
+};
 
-signInButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(logInOutline);
-	showPopup(signInForm, 'form_hidden');
-});
+if(signInButton){
+	signInButton.addEventListener('click', () => {
+		hideAllPopups();
+		showOutline(logInOutline);
+		showPopup(signInForm, 'form_hidden');
+	});
+};
 
-recoveryButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(logInOutline);
-	showPopup(passwordRecoveryForm, 'form_hidden');
-});
+if(recoveryButton){
+	recoveryButton.addEventListener('click', () => {
+		hideAllPopups();
+		showOutline(logInOutline);
+		showPopup(passwordRecoveryForm, 'form_hidden');
+	});
+};
 
-headerWishesButton.addEventListener('click', () => {
-	hideAllOutlines();
-	showOutline(wishesOutline);
-});
+if(headerWishesButton){
+	headerWishesButton.addEventListener('click', () => {
+		hideAllOutlines();
+		showOutline(wishesOutline);
+	});
+};
 
-headerCartButton.addEventListener('click', () => {
-	hideAllOutlines();
-	showOutline(cartOutline);
-});
+if(headerCartButton){
+	headerCartButton.addEventListener('click', () => {
+		hideAllOutlines();
+		showOutline(cartOutline);
+	});
+};
 
 // закрываем меню и футеры кликом по основному разделу
 document.addEventListener('keydown', event => {
@@ -122,7 +138,9 @@ document.addEventListener('keydown', event => {
 });
 
 // закрываем меню и футеры кликом по основному разделу
-main.addEventListener('click', () => hideAllPopups());
+if(main){
+	main.addEventListener('click', () => hideAllPopups());
+};
 
 // закрываем меню и футеры кликом по футеру
 document.addEventListener('click', event => {
@@ -228,10 +246,12 @@ brandsInMenu.forEach(brand => {
 	let brandLink = document.querySelector(brand.menuLink);
 	let brandImage = document.querySelector(brand.menuImage);
 	let allImages = document.querySelectorAll('.menu__image');
-	brandLink.addEventListener('mouseover', () => {
-		allImages.forEach(image => image.classList.add('menu__image_hidden'));
-		brandImage.classList.remove('menu__image_hidden');
-	});
+	if(brandLink){
+		brandLink.addEventListener('mouseover', () => {
+			allImages.forEach(image => image.classList.add('menu__image_hidden'));
+			brandImage.classList.remove('menu__image_hidden');
+		});
+	};
 });
 
 
@@ -302,8 +322,10 @@ categoriesInMenu.forEach(category => {
 	let categoryLink = document.querySelector(category.menuLink);
 	let categoryImage = document.querySelector(category.menuImage);
 	let allCategories = document.querySelectorAll('.menu__image');
-	categoryLink.addEventListener('mouseover', () => {
-		allCategories.forEach(image => image.classList.add('menu__image_hidden'));
-		categoryImage.classList.remove('menu__image_hidden');
-	});
+	if(categoryLink){
+		categoryLink.addEventListener('mouseover', () => {
+			allCategories.forEach(image => image.classList.add('menu__image_hidden'));
+			categoryImage.classList.remove('menu__image_hidden');
+		});
+	};
 });

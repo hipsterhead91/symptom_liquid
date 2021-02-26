@@ -4,6 +4,7 @@ const counter = document.querySelector('.counter');
 const numberOfSections = Array.from(document.querySelectorAll('.section')).length;
 
 const myFullpage = new fullpage('#fullpage', {
+	licenseKey: '035BCCB5-F4C94A55-B766CB96-94A4230B',
 
 	//Navigation
 	menu: '#menu',
@@ -82,7 +83,9 @@ const myFullpage = new fullpage('#fullpage', {
 	onSlideLeave: function (section, origin, destination, direction) { }
 });
 
-counter.textContent = `1/${numberOfSections}`;
+if(counter){
+	counter.textContent = `1/${numberOfSections}`;
+};
 
 
 

@@ -2,141 +2,31 @@
 <head>
   <title>{{ page_title }}</title>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+  <!-- <meta name="format-detection" content="telephone=no"> -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_img_url: '32x32' }}" type="image/ico">
-  <!-- <meta name="format-detection" content="telephone=no"> -->
-  <!-- <meta name="description" content="{{ page_description | escape }}"> -->
-  <!-- <link rel="stylesheet" href="./node_modules/fullpage.js/dist/fullpage.css">
-  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin> -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="{{ page_description | escape }}">
   {{ 'theme.css' | asset_url | stylesheet_tag }}
-  {{ 'item.js' | asset_url | script_tag }}
+  {{ 'fullpage.min.css' | asset_url | stylesheet_tag }}
+  {{ 'fullpage.min.js' | asset_url | script_tag }}
   {{ 'common.js' | asset_url | script_tag }}
-  {{ 'wishes.js' | asset_url | script_tag }}
-  {{ 'cart.js' | asset_url | script_tag }}
-  {{ 'fullpage.js' | asset_url | script_tag }}
   {{ 'index.js' | asset_url | script_tag }}
-  {{ 'https://code.jquery.com/jquery-3.5.1.min.js' | script_tag }}
   {{ content_for_header }}
 </head>
 
 <body>
   <!-- HEADER -->
   {% section 'header' %}
-    {% if shop.customer_accounts_enabled %}
-      {% if customer %}
-        <a href="/account">account</a>
-        {{ 'log out'  | customer_logout_link }}
-      {% else %}
-        {{ 'log in ' | customer_login_link }}
-        {{ 'register' | customer_register_link }}
-      {% endif %}
-    {% endif %}
 
-  <main id="fullpage">
+  <main id='fullpage'>
     {{ content_for_layout }}
   </main>
-
-
-  <!-- SECTION COUNTER -->
-  <span class="counter"></span>
-
-
-  <!-- FOOTER -->
-
-
-  <!-- FORM: SIGN IN -->
-  <!-- <form class="form">
-    <h3 class="form__heading">Регистрация</h3>
-    <div class="form__grid">
-      <div class="form__left-half">
-        <h4 class="form__input-name">E-mail:</h4>
-        <input class="form__input" placeholder="your@e-mail.com">
-        <span class="form__error">Введите адрес электронной почты</span>
-        <label class="form__checkbox-alignment">
-          <div>
-            <input class="form__true-checkbox" type="checkbox" checked>
-            <div class="form__fake-checkbox"></div>
-          </div>
-          <p class="form__checkbox-description">I would like to receive information about new collections and<br>special
-            offers by the specified email</p>
-        </label>
-      </div>
-      <div class="form__right-half">
-        <h4 class="form__input-name">Пароль:</h4>
-        <input class="form__input" placeholder="Your pass">
-        <span class="form__error">Пароль слишком короткий</span>
-        <label class="form__checkbox-alignment">
-          <div>
-            <input class="form__true-checkbox" type="checkbox" checked>
-            <div class="form__fake-checkbox"></div>
-          </div>
-          <p class="form__checkbox-description">By clicking the "Checkout" button you consent to the processing<br>of
-            your
-            personal data</p>
-        </label>
-        <button class="form__button form__button_submit">Регистрация</button>
-      </div>
-    </div>
-  </form> -->
-
-
-  <!-- FORM: LOG IN -->
-
-  <!-- FORM: PASSWORD RECOVERY -->
-  <!-- <form class="form">
-    <h3 class="form__heading">Восстановление</h3>
-    <div class="form__grid">
-      <div class="form__left-half"></div>
-      <div class="form__right-half">
-        <h4 class="form__input-name">E-mail / Имя пользователя</h4>
-        <input class="form__input" placeholder="your@e-mail.com">
-        <span class="form__error">Неверный адрес электронной почты</span>
-        <p class="form__recovery-text">
-          Укажите свой Email или имя пользователя.<br>Ссылку на создание нового пароля Вы получите<br>по электронной почте.
-        </p>
-        <button class="form__button form__button_submit form__button_recovery">Восстановить пароль</button>
-      </div>
-    </div>
-  </form> -->
-
-  <!-- FORM: SUBSCRIBE -->
-  <!-- <form class="form">
-    <h3 class="form__heading">Давайте познакомимся</h3>
-    <div class="form__grid">
-      <div class="form__left-half">
-        <h4 class="form__input-name">E-mail:</h4>
-        <input class="form__input" placeholder="your@e-mail.com">
-        <span class="form__error">Введите адрес электронной почты</span>
-        <label class="form__checkbox-alignment">
-          <div>
-            <input class="form__true-checkbox" type="checkbox" checked>
-            <div class="form__fake-checkbox"></div>
-          </div>
-          <p class="form__checkbox-description">I would like to receive information about new collections and<br>special
-            offers by the specified email</p>
-        </label>
-      </div>
-      <div class="form__right-half">
-        <h4 class="form__input-name">Ваше имя:</h4>
-        <input class="form__input" placeholder="Your pass">
-        <span class="form__error">Укажите Ваше имя</span>
-        <label class="form__checkbox-alignment">
-          <div>
-            <input class="form__true-checkbox" type="checkbox" checked>
-            <div class="form__fake-checkbox"></div>
-          </div>
-          <p class="form__checkbox-description">By clicking the "Checkout" button you consent to the processing<br>of
-            your
-            personal data</p>
-        </label>
-        <button class="form__button form__button_submit">Подписаться</button>
-      </div>
-    </div>
-  </form> -->
-
-
-  <!-- COOKIES -->
+  {% section 'counter' %}
 
 </body>
 

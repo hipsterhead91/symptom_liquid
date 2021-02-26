@@ -44,27 +44,7 @@
   <h2>КОРЗИНА</h2>
   Cart is empty
 {% endif %} -->
-<head>
-    <title>{{ page_title }}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
-    <link rel="canonical" href="{{ canonical_url }}">
-    <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_img_url: '32x32' }}" type="image/ico">
-    <!-- <meta name="format-detection" content="telephone=no"> -->
-    <!-- <meta name="description" content="{{ page_description | escape }}"> -->
-    <!-- <link rel="stylesheet" href="./node_modules/fullpage.js/dist/fullpage.css">
-    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin> -->
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
-    {{ 'item.js' | asset_url | script_tag }}
-    {{ 'common.js' | asset_url | script_tag }}
-    {{ 'wishes.js' | asset_url | script_tag }}
-    {{ 'cart.js' | asset_url | script_tag }}
-    {{ 'fullpage.js' | asset_url | script_tag }}
-    {{ 'index.js' | asset_url | script_tag }}
-    {{ 'https://code.jquery.com/jquery-3.5.1.min.js' | script_tag }}
-    {{ content_for_header }}
-</head>
-<body>
+
   <div class="cart">
     <div class="cart-items">
       <h1 class="heading">2 товара</h1>
@@ -185,4 +165,156 @@
       <button class="black-button black-button_order">Оплата</button>
     </form>
   </div>
-</body>
+
+{% javascript %}
+
+// HEADER
+
+const main = document.querySelector('main');
+const header = document.querySelector('header');
+const headerLogo = document.querySelector('#header-logo');
+
+const buttons = document.querySelectorAll('.header__button');
+const headerBrandsButton = document.querySelector('#header-brands-button');
+const headerCategoriesButton = document.querySelector('#header-categories-button');
+const headerSubscribeButton = document.querySelector('#header-subscribe-button');
+const headerLogInButton = document.querySelector('#header-login-button');
+const headerWishesButton = document.querySelector('#header-wishes-button');
+const headerCartButton = document.querySelector('#header-cart-button');
+
+const outlines = document.querySelectorAll('.header__button-outline');
+const brandsOutline = document.querySelector('#brands-outline');
+const categoriesOutline = document.querySelector('#categories-outline');
+const subscribeOutline = document.querySelector('#subscribe-outline');
+const logInOutline = document.querySelector('#login-outline');
+const wishesOutline = document.querySelector('#wishes-outline');
+const cartOutline = document.querySelector('#cart-outline');
+
+const menus = document.querySelectorAll('.menu');
+const brandsMenu = document.querySelector('#brands-menu');
+const categoriesMenu = document.querySelector('#categories-menu');
+
+const forms = document.querySelectorAll('.form');
+const subscribeForm = document.querySelector('#subscribe-form');
+const logInForm = document.querySelector('#login-form');
+const signInButton = document.querySelector('#signin-button');
+const recoveryButton = document.querySelector('#recovery-button');
+const signInForm = document.querySelector('#signin-form');
+const passwordRecoveryForm = document.querySelector('#password-recovery-form');
+
+function headerTurnsBlack() {
+	if (header.classList.contains('header_two-colored')) {
+		headerLogo.classList.remove('header__logo_white');
+		buttons.forEach(button => button.classList.remove('header__button_white'));
+		wishesOutline.classList.remove('header__button-outline_white');
+		cartOutline.classList.remove('header__button-outline_white');
+	}
+};
+
+function headerTurnsWhite() {
+	if (header.classList.contains('header_two-colored')) {
+		headerLogo.classList.add('header__logo_white');
+		buttons.forEach(button => button.classList.add('header__button_white'));
+		wishesOutline.classList.add('header__button-outline_white');
+		cartOutline.classList.add('header__button-outline_white');
+	}
+};
+
+function showOutline(outline) {
+	outline.classList.remove('header__button-outline_hidden');
+};
+
+function hideAllOutlines() {
+	outlines.forEach(outline => outline.classList.add('header__button-outline_hidden'));
+};
+
+function showPopup(popup, hidingClass) {
+	headerTurnsBlack();
+	popup.classList.remove(hidingClass);
+};
+
+function hideAllPopups() {
+	menus.forEach(menu => menu.classList.add('menu_hidden'));
+	forms.forEach(form => form.classList.add('form_hidden'));
+	hideAllOutlines();
+	headerTurnsWhite();
+};
+
+headerBrandsButton.addEventListener('click', () => {
+	hideAllPopups();
+	showOutline(brandsOutline);
+	showPopup(brandsMenu, 'menu_hidden');
+});
+
+headerCategoriesButton.addEventListener('click', () => {
+	hideAllPopups();
+	showOutline(categoriesOutline);
+	showPopup(categoriesMenu, 'menu_hidden');
+});
+
+headerSubscribeButton.addEventListener('click', () => {
+	hideAllPopups();
+	showOutline(subscribeOutline);
+	showPopup(subscribeForm, 'form_hidden');
+});
+
+headerLogInButton.addEventListener('click', () => {
+	hideAllPopups();
+	showOutline(logInOutline);
+	showPopup(logInForm, 'form_hidden');
+});
+
+signInButton.addEventListener('click', () => {
+	hideAllPopups();
+	showOutline(logInOutline);
+	showPopup(signInForm, 'form_hidden');
+});
+
+recoveryButton.addEventListener('click', () => {
+	hideAllPopups();
+	showOutline(logInOutline);
+	showPopup(passwordRecoveryForm, 'form_hidden');
+});
+
+headerWishesButton.addEventListener('click', () => {
+	hideAllOutlines();
+	showOutline(wishesOutline);
+});
+
+headerCartButton.addEventListener('click', () => {
+	hideAllOutlines();
+	showOutline(cartOutline);
+});
+
+// закрываем меню и футеры кликом по основному разделу
+document.addEventListener('keydown', event => {
+	if (event.key == 'Escape') hideAllPopups();
+});
+
+// закрываем меню и футеры кликом по основному разделу
+main.addEventListener('click', () => hideAllPopups());
+
+// закрываем меню и футеры кликом по футеру
+document.addEventListener('click', event => {
+	let isFooter = event.target.closest('.footer');
+	if (isFooter) hideAllPopups();
+});
+
+// закрываем меню и футеры кликом по основному разделу
+// (а кнопке "желания" возвращаем овал)
+document.addEventListener('keydown', event => {
+	if (event.key == 'Escape') {
+    hideAllPopups();
+    cartOutline.classList.remove('header__button-outline_hidden');
+  };
+});
+
+// закрываем меню и футеры кликом по основному разделу
+// (а кнопке "желания" возвращаем овал)
+main.addEventListener('click', () => {
+  hideAllPopups();
+  cartOutline.classList.remove('header__button-outline_hidden');
+});
+
+{% endjavascript %}
+

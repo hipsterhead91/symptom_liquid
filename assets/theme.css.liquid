@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Nimbus Sans";
-  src: url("./vendor/fonts/Nimbus/NimbusSanL-Reg.ttf") format("truetype"),
-  url("./vendor/fonts/Nimbus/NimbusSanL-Reg.woff") format("woff"),
-  url("./vendor/fonts/Nimbus/NimbusSanL-Reg.woff2") format("woff2");
+  src: url('{{"NimbusSanL-Reg.ttf" | | asset_url }}') format("truetype"),
+  url('{{"NimbusSanL-Reg.woff" | | asset_url }}') format("woff"),
+  url('{{"NimbusSanL-Reg.woff2" | | asset_url }}') format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -884,6 +884,7 @@ button:hover, a:hover {
 
 /* HEADER */
 
+
 .header {
   position: absolute;
   top: 0;
@@ -1063,6 +1064,9 @@ button:hover, a:hover {
   visibility: hidden;
   opacity: 0;
 }
+
+
+
 
 
 
@@ -1794,6 +1798,7 @@ button:hover, a:hover {
   padding-right: 3%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: #FAFAFA;
 }
 
 .cart-items {
@@ -1914,7 +1919,7 @@ button:hover, a:hover {
   box-sizing: border-box;
   outline: none;
   background-color: #FAFAFA;
-  background-image: url({{ 'icon-exit-white.liquid' | asset_img_url: 'master' }});;
+  background-image: url({{ 'icon-edit-black.liquid' | asset_img_url: 'master' }});;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -2214,18 +2219,4 @@ button:hover, a:hover {
 
 .slide__image {
   width: 100%;
-}
-
-
-
-
-
-/* add by me */
-
-.grid-collection {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-.grid-product {
-  display: grid;
 }

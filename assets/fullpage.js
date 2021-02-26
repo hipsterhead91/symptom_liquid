@@ -1,5 +1,5 @@
 /*!
- * fullPage 3.0.9
+ * fullPage 3.1.0
  * https://github.com/alvarotrigo/fullPage.js
  *
  * @license GPLv3 for open source use only
@@ -535,7 +535,6 @@
                 silentMoveTo(sectionIndex + 1);
             }
 
-            isResizing = false;
             if(isFunction( options.afterResize ) && resizing){
                 options.afterResize.call(container, window.innerWidth, window.innerHeight);
             }
@@ -587,7 +586,7 @@
 
         if(container){
             //public functions
-            FP.version = '3.0.8';
+            FP.version = '3.1.0';
             FP.setAutoScrolling = setAutoScrolling;
             FP.setRecordHistory = setRecordHistory;
             FP.setScrollingSpeed = setScrollingSpeed;
@@ -642,8 +641,8 @@
 
             //using jQuery initialization? Creating the $.fn.fullpage object
             if(options.$){
-                Object.keys(FP).forEach(function (key) {    
-                    options.$.fn.fullpage[key] = FP[key];   
+                Object.keys(FP).forEach(function (key) {
+                    options.$.fn.fullpage[key] = FP[key];
                 });
             }
 
@@ -794,7 +793,7 @@
                     //leaving a child inside the normalScoll element is not leaving the normalScroll #3661
                     var isNormalScrollChildFocused = closest(target, normalSelector);
 
-                    if(isNormalScrollTarget || isNormalScrollChildFocused){
+                    if(isNormalScrollTarget || isNormalScrollChildFocused){
                         if(!FP.shared.isNormalScrollElement){
                             setMouseHijack(false);
 
@@ -853,7 +852,7 @@
             if(!options.anchors.length){
                 var anchorsAttribute = '[data-anchor]';
                 var anchors = $(options.sectionSelector.split(',').join(anchorsAttribute + ',') + anchorsAttribute, container);
-                if(anchors.length && anchors.length === $(SECTION_SEL).length){
+                if(anchors.length && anchors.length === $(options.sectionSelector, container).length){
                     g_initialAnchorsInDom = true;
                     anchors.forEach(function(item){
                         options.anchors.push(item.getAttribute('data-anchor').toString());
@@ -1423,7 +1422,7 @@
         * used one to determine the direction.
         */
         function touchMoveHandler(e){
-            var activeSection = closest(e.target, SECTION_SEL) || $(SECTION_ACTIVE_SEL)[0];
+            var activeSection = closest(e.target, SECTION_SEL) || $(SECTION_ACTIVE_SEL)[0];
 
             if (isReallyTouch(e) ) {
 
@@ -1898,6 +1897,8 @@
             else{
                 var scrollSettings = getScrollSettings(v.dtop);
                 FP.test.top = -v.dtop + 'px';
+
+                css($htmlBody, {'scroll-behavior': 'unset'});
 
                 scrollTo(scrollSettings.element, scrollSettings.options, options.scrollingSpeed, function(){
                     if(options.scrollBar){
@@ -2664,17 +2665,15 @@
 
         /*
         * Resize event handler.
-        */        
+        */
         function resizeHandler(){
-            isResizing = true;
- 
             clearTimeout(resizeId);
 
             //in order to call the functions only when the resize is finished
-            //http://stackoverflow.com/questions/4298612/jquery-how-to-call-resize-event-only-once-its-finished-resizing    
+            //http://stackoverflow.com/questions/4298612/jquery-how-to-call-resize-event-only-once-its-finished-resizing
             resizeId = setTimeout(function(){
 
-                //issue #3336 
+                //issue #3336
                 //(some apps or browsers, like Chrome/Firefox for Mobile take time to report the real height)
                 //so we check it 3 times with intervals in that case
                 for(var i = 0; i< 4; i++){
@@ -2687,6 +2686,7 @@
         * When resizing the site, we adjust the heights of the sections, slimScroll...
         */
         function resizeActions(){
+            isResizing = true;
 
             //checking if it needs to get responsive
             responsive();
@@ -2709,6 +2709,8 @@
             else{
                 adjustToNewViewport();
             }
+
+            isResizing = false;
         }
 
         /**
@@ -3453,7 +3455,7 @@
 
             if(!isOK){
                 showError('error', 'Fullpage.js version 3 has changed its license to GPLv3 and it requires a `licenseKey` option. Read about it here:');
-                showError('error', 'https://github.com/alvarotrigo/fullPage.js#options.');
+                showError('error', 'https://github.com/alvarotrigo/fullPage.js#options');
             }
             else if(l && l.length < 20){
                 console.warn('%c This website was made using fullPage.js slider. More info on the following website:', msgStyle);
