@@ -1,22 +1,22 @@
-<h1>{{ product.title }}</h1>
-
-<div>{{ product.description }}</div>
+<style>
+  body {background-color: #fafafa;}
+</style>
 
 <div class="item">
   <div class="item__info">
     <button class="back-button">
-      <div class="back-button__arrow"></div><span class="back-button__text">К бренду</span>
+      <div class="back-button__arrow"></div><span class="back-button__text">Назад</span>
     </button>
-    <h1 class="item__brand">Заколка</h1>
-    <h2 class="item__name"></h2>
-    <p class="item__description">Многофункциональный серебряный браслет с холодной эмалью. С помощью цепочки-регулятора его также можно использовать как чокер и браслет на ногу. Ручная работа. Ограниченный тираж.</p>
-    <span class="item__status">In stock</span>
-    <span class="item__price">19000 Rub.</span>
+    <h1 class="item__brand"></h1>
+    <h2 class="item__name">{{ product.title }}</h2>
+    <p class="item__description">{{ product.description }}</p>
+    <span class="item__status">{{ product.available }}</span>
+    <span class="item__price">{{ product.price | money}}</span>
     <a href="./shipping_and_payment.html" class="item__shipping">Доставка и возврат</a>
   </div>
 
   <div class="item__image-wrapper">
-    <img class="item__image" src="../images/content/bracelet-crumpled.jpg" alt="Prayer">
+    <img class="item__image" src="{{ product | img_url: '400x400' }}" alt="{{ product.title }}">
   </div>
 
   <div class="item__order">

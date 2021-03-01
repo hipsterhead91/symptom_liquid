@@ -236,6 +236,11 @@ const brandsList = [
 		menuLink: '#link-to-sub-rosa',
 		menuImage: '#image-for-sub-rosa',
 	},
+	{
+		name: 'Veta Perfume',
+		menuLink: '#link-to-veta-perfume',
+		menuImage: '#image-for-veta-perfume',
+	},
 ];
 
 const brandsInMenu = brandsList.filter(brand => {
@@ -311,6 +316,11 @@ const categoriesList = [
 		name: 'Одежда',
 		menuLink: '#link-to-clothes',
 		menuImage: '#image-for-clothes',
+	},
+	{
+		name: 'Фероньерки',
+		menuLink: '#link-to-feronniere',
+		menuImage: '#image-for-feronniere',
 	},
 ];
 

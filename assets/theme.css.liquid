@@ -274,7 +274,7 @@ button:hover, a:hover {
   height: 10px;
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 10%;
+  margin-left: 11%;
   background-image: url(./images/to-brand-arrow.svg);
   background-size: contain;
   background-position: center;
@@ -284,7 +284,7 @@ button:hover, a:hover {
 .back-button__text {
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 10%;
+  margin-left: 17%;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -447,7 +447,7 @@ button:hover, a:hover {
   display: flex;
   width: 25px;
   height: 25px;
-  background-image: url(./images/checkbox-cirlce.svg);
+  background-image: url({{ 'checkbox-cirlce.jpg' | asset_img_url: 'master' }});
   background-position: center;
   background-size: cover;
 }
@@ -462,7 +462,7 @@ button:hover, a:hover {
   content: "";
   width: 25px;
   height: 25px;
-  background-image: url(./images/checkbox-cross.svg);
+  background-image: url({{ 'checkbox-cross.jpg' | asset_img_url: 'master' }});
   background-position: center;
   background-size: cover;
   opacity: 0;
@@ -543,6 +543,11 @@ button:hover, a:hover {
   opacity: 1;
 }
 
+@media screen and (max-width: 1346px) {
+  .filters {
+    font-size: 16px;
+  }
+}
 
 
 
@@ -1171,7 +1176,7 @@ button:hover, a:hover {
   margin-top: auto;
   margin-bottom: 112px;
   align-self: center;
-  background-image: url(./images/cookies-close-button.svg);
+  background-image:  url({{ 'cookies-close-button.png' | asset_img_url: 'master' }});
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1437,6 +1442,19 @@ button:hover, a:hover {
   }
 }
 
+#open_chatra {
+  z-index: 4;
+  width: 55px;
+  height: 55px;
+  border: 1px solid #0F0F0F;
+  border-radius: 50%;
+  box-sizing: border-box;
+  outline: none;
+  background-image: url({{ 'chat-white.png' | asset_img_url: 'master' }});;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 
 
@@ -1466,7 +1484,7 @@ button:hover, a:hover {
 }
 
 .text-page_brand {
-  min-height: 498px;
+  min-height: 200px;
   padding-top: 98px;
 }
 
@@ -1897,18 +1915,17 @@ button:hover, a:hover {
 }
 
 .cart-item__edit-button {
-  width: 79px;
-  height: 48px;
   margin-right: 12px;
-  font-size: 16px;
-  line-height: 1.2;
-  color: #0F0F0F;
-  text-transform: uppercase;
+  width: 48px;
+  height: 48px;
   border: 1px solid #0F0F0F;
-  border-radius: 33px;
+  border-radius: 50%;
   box-sizing: border-box;
   outline: none;
   background-color: #FAFAFA;
+  background-image: url({{ 'edit-button.png' | asset_img_url: 'master' }});;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .cart-item__remove-button {
@@ -1919,7 +1936,7 @@ button:hover, a:hover {
   box-sizing: border-box;
   outline: none;
   background-color: #FAFAFA;
-  background-image: url({{ 'icon-edit-black.liquid' | asset_img_url: 'master' }});;
+  background-image: url({{ 'close-button-cross.png' | asset_img_url: 'master' }});;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -2130,8 +2147,8 @@ button:hover, a:hover {
   left: 0;
   right: 0;
   z-index: 1;
-  width: 40vw;
-  height: 40vw;
+  width: 25vw;
+  height: 25vw;
   margin: -5vh auto auto auto;
   display: flex;
   background-color: rgba(0, 0, 0, 0.3);
@@ -2220,3 +2237,31 @@ button:hover, a:hover {
 .slide__image {
   width: 100%;
 }
+
+
+
+/*  styles from shopify  */
+
+.grid-container {
+  display: grid;
+  margin-left: 64px;
+  margin-right: 59px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.grid__item {
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-link__image-centered {
+  vertical-align: middle;
+  width: 100%;
+  overflow: hidden;
+}
+

@@ -12,21 +12,18 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="description" content="{{ page_description | escape }}">
   {{ 'theme.css' | asset_url | stylesheet_tag }}
-  {{ 'fullpage.min.css' | asset_url | stylesheet_tag }}
-  {{ 'fullpage.min.js' | asset_url | script_tag }}
-  {{ 'common.js' | asset_url | script_tag }}
-  {{ 'index.js' | asset_url | script_tag }}
   {{ content_for_header }}
 </head>
 
 <body>
-  <!-- HEADER -->
-  {% section 'header' %}
 
-  <main id='fullpage'>
-    {{ content_for_layout }}
-  </main>
-  {% section 'counter' %}
+{% section 'header' %}
+
+<main>
+  {{ content_for_layout }}
+</main>
+
+{% section 'footer' %}
 
 </body>
 

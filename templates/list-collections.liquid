@@ -41,6 +41,11 @@
   Loop through each collection, except 'frontpage'.
 {% endcomment %}
 
+{% paginate collection.products by 20 %}
+  {% for product in collection.products %}
+  {% endfor %}
+{% endpaginate %}
+
 <header class="section-header text-center">
   <h1>{{ 'collections.general.catalog_title' | t }}</h1>
   <hr class="hr--small">

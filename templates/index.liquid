@@ -1,27 +1,53 @@
 {{ content_for_index }}
 
 <div id="fullpage">
+
   <section class="section section_1 active">
-    {% section 'fullpage-section-1' %}
+    <a href="/collections/новинки">
+      <div class="section__info">
+        <h2 class="section__heading">НОВИНКИ</h2>
+        <p class="section__paragraph section__paragraph_bottom">взгляните на наши новые украшения
+        </p>
+      </div>
+    </a>
   </section>
+
   <section class="section section_2">
-    {% section 'fullpage-section-2' %}
+    <a href="/collections/скидки">
+      <div class="section__info section__info_flex-end">
+        <div class="section__heading-alignment">
+          <h2 class="section__heading">СКИДКИ</h2>
+        </div>
+      </div>
+    </a>
   </section>
+
   <section class="section section_3">
-    {% section 'fullpage-section-3' %}
+    <a href="/collections/8-марта">
+      <div class="section__info">
+        <h2 class="section__heading">8 МАРТА</h2>
+        <p class="section__paragraph section__paragraph_3">наша подборка украшений к восьмому дню весны</p>
+        <!-- <p class="section__paragraph section__paragraph_bottom"></p> -->
+      </div>
+    </a>
   </section>
+
   <section class="section section_4">
-    {% section 'fullpage-section-4' %}
+    <a href="/products/сертификат-свободного-номинала">
+      <div class="section__info">
+        <h2 class="section__heading">Подарочный сертификат</h2>
+        <p class="section__paragraph section__paragraph_bottom section__paragraph_short">подарочный сертификат не имеет срока действия и доступен для использования на сайте или в наших магазинах</p>
+      </div>
+    </a>
   </section>
 </div>
 
-<!-- SECTION COUNTER -->
-<span class="counter"></span>
+{% section 'counter' %}
 
 {% section 'footer' %}
 
 <!-- COOKIES -->
-<!-- <div id="cookies-popup" class="cookies cookies_hidden">
+<div id="cookies-popup" class="cookies cookies_hidden">
   <p class="paragraph paragraph_cookies">
     Наш сайт, как и большинство других, использует файлы cookie и другие подобные технологии (пиксельные теги и т.д.)
     для предоставления услуг, которые наилучшим образом соответствуют вашим интересам и потребностям, а также для
@@ -32,4 +58,15 @@
     с настоящим Уведомлением.
   </p>
   <button id="cookies-close-button" class="cookies__close-button"></button>
-</div> -->
+</div>
+
+{{ 'fullpage.min.css' | asset_url | stylesheet_tag }}
+{{ 'fullpage.min.css.map' | asset_url | stylesheet_tag }}
+{{ 'fullpage.extensions.min.js' | asset_url | script_tag }}
+{{ 'common.js' | asset_url | script_tag }}
+{{ 'index.js' | asset_url | script_tag }}
+{{ 'easings.min.js' | asset_url | script_tag }}
+{{ 'easings.min.js.map' | asset_url | script_tag }}
+{{ 'scrolloverflow.js' | asset_url | script_tag }}
+{{ 'scrolloverflow.min.js' | asset_url | script_tag }}
+{{ 'scrolloverflow.min.js.map' | asset_url | script_tag }}

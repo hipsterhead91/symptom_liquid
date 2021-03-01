@@ -1,4 +1,291 @@
 {% paginate collection.products by 20 %}
+  {% for product in collection.products %}
+  {% endfor %}
+{% endpaginate %}
+
+<style>
+  body {background-color: #fafafa;}
+</style>
+
+<header class="header">
+  <div class="header__fraction">
+    <a id="header-logo" class="header__logo" href="https://symptom-msk.myshopify.com"></a>
+  </div>
+  <div class="header__fraction">
+    <button id="header-brands-button" class="header__button" type='button'>
+      <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
+      БРЕНДЫ
+    </button>
+    <button id="header-categories-button" class="header__button" type='button'>
+      <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
+      КАТЕГОРИИ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-subscribe-button" class="header__button" type='button'>
+      <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ПОДПИСАТЬСЯ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-login-button" class="header__button header__button_login" type='button'>
+      <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ВОЙТИ
+    </button>
+    <a id="header-wishes-button" class="header__button header__button_wishes"
+      href="https://symptom-msk.myshopify.com/wishes">
+      <span id="wishes-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ЖЕЛАНИЯ
+    </a>
+    <a id="header-cart-button" class="header__button header__button_cart"
+      href="https://symptom-msk.myshopify.com/cart">
+      <span id="cart-outline" class="header__button-outline header__button-outline_hidden"></span>
+      КОРЗИНА(00)
+    </a>
+  </div>
+</header>
+
+<div class="text-page text-page_divided text-page_brand">
+  <div class="text-page__left-half">
+    <h1 class="heading">{{ collection.title }}</h1>
+  </div>
+  <div class="text-page__right-half">
+    <p class="paragraph">{{ collection.description }}</p>
+  </div>
+</div>
+
+
+<!-- FILTERS -->
+<div class="filters">
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter" checked>
+    <span class="filters__fake-radio">Все</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Желания</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Подвески</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Серьги</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Кольца</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Каффы</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Браслеты</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Заколки</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Головные&nbsp;уборы</span>
+  </label>
+</div>
+<div class="filters">
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Одежда</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Духи</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Твёрдые&nbsp;духи</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter">
+    <span class="filters__fake-radio">Фероньерки</span>
+  </label>
+</div>
+
+<div class="grid-container">
+  <!-- {% assign grid_item_width = 'wide--one-fifth large--one-quarter medium-down--one-half' %} -->
+  <!-- {%- assign product_width = 319 -%} -->
+
+  {% for product in collection.products %}
+    {% assign featured = product %}
+    <div class="grid__item {{grid_item_width}}">
+      {% include 'product-grid-item' %}
+    </div>
+  {% else %}
+
+    {% if shop.products_count == 0 %}
+      <div class="grid__item card card_square">
+        <div class="helper-section">
+          <div class="grid-uniform helper-content{% if section.settings.center_grid_link %} text-center{% endif %}">
+            {% for i in (1..8) %}
+              <div class="grid__item one-half post-large--one-quarter">
+                <a href="/admin/products" class="grid-link">
+                  <span class="grid-link__image grid-link__image--product">
+                    <span class="grid-link__image-centered">
+                    </span>
+                  </span>
+                  <p class="card__name">{{ 'product_title' | t }}</p>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="grid__item">
+        <p><em>{{ 'collections.general.no_matches' | t }}</em></p>
+      </div>
+    {% endif %}
+
+  {% endfor %}
+
+</div>
+
+<!-- CARDS -->
+<!-- <section class="cards">
+  <div class="cards__fixed-picture"></div>
+
+  <div class="card card_square">
+    <img class="card__picture card__picture_square" src="../images/content/ring-prayer.jpg" alt="Prayer">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Prayer</h3>
+          <span class="card__material">(Gold/Silver)</span>
+        </div>
+        <span class="card__price">30 00000(Rub)</span>
+      </div>
+      <button class="like-button "></button>
+    </div>
+  </div>
+
+  <div class="card card_vertical">
+    <img class="card__picture" src="../images" alt="Rhinestone">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Rhinestone</h3>
+          <span class="card__material">(Gold)</span>
+        </div>
+        <span class="card__price">30 00000(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+
+  <div class="card card_square">
+    <img class="card__picture card__picture_square" src="../images/content/bracelet-wave.jpg" alt="Wave">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Wave</h3>
+          <span class="card__material">(Gold/Silver/Bronze)</span>
+        </div>
+        <span class="card__price">16 000(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+
+  <div class="card card_vertical">
+    <img class="card__picture" src="../images/content/pendal-a.jpg" alt="A">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">A</h3>
+          <span class="card__material">(Gold/Silver)</span>
+        </div>
+        <span class="card__price">30 00000(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+
+  <div class="card card_horizontal">
+    <img class="card__picture" src="../images/content/pendal-crumpled-leaf.jpg" alt="Crumpled leaf">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Crumpled leaf</h3>
+          <span class="card__material">(Gold)</span>
+        </div>
+        <span class="card__price">1500(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+
+  <div class="card card_square">
+    <img class="card__picture card__picture_square" src="../images/content/bracelet-wave.jpg" alt="Wave">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Wave</h3>
+          <span class="card__material">(Gold/Silver/Bronze)</span>
+        </div>
+        <span class="card__price">16 000(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+
+  <div class="card card_square">
+    <img class="card__picture card__picture_square" src="../images/content/ring-moon.jpg" alt="Moon">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Moon</h3>
+          <span class="card__material">(Gold/Silver)</span>
+        </div>
+        <span class="card__price">30 00000(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+
+  <div class="card card_square">
+    <img class="card__picture card__picture_square" src="../images/content/ring-prayer-silver.jpg" alt="Prayer">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Prayer</h3>
+          <span class="card__material">(Silver)</span>
+        </div>
+        <span class="card__price">30 00000(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+
+  <div class="card card_square">
+    <img class="card__picture card__picture_square" src="../images/content/bracelet-crumpled.jpg" alt="Crumpled">
+    <div class="card__bottom">
+      <div class="card__info">
+        <div class="card__name-and-material">
+          <h3 class="card__name">Crumpled</h3>
+          <span class="card__material">(Bronze)</span>
+        </div>
+        <span class="card__price">30 00000(Rub)</span>
+      </div>
+      <button class="like-button"></button>
+    </div>
+  </div>
+</section> -->
+
+
+
+<!-- {% paginate collection.products by 20 %}
 
 <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-sort-enabled="{{ section.settings.sort_enable }}" data-tags-enabled="{{ section.settings.tags_enable }}">
   <div class="section-header section-header--breadcrumb">
@@ -272,4 +559,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %} -->

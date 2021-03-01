@@ -45,276 +45,431 @@
   Cart is empty
 {% endif %} -->
 
-  <div class="cart">
-    <div class="cart-items">
-      <h1 class="heading">2 товара</h1>
-      <div class="cart-item">
-        <div class="cart-item__info">
-          <span class="cart-item__spec">Anna Maslovskaya</span>
-          <span class="cart-item__spec">Prayer</span>
-          <span class="cart-item__spec">Material: Gold</span>
-          <span class="cart-item__spec">Size: 7.5</span>
-          <span class="cart-item__price">19 000 Rub.</span>
-        </div>
-        <img class="cart-item__image" src="../images/content/ring-prayer.jpg" alt="">
-        <div class="cart-item__buttons">
-          <button class="cart-item__edit-button">Edit</button>
-          <button class="cart-item__remove-button"></button>
-        </div>
+<header class="header">
+  <div class="header__fraction">
+    <a id="header-logo" class="header__logo" href="https://symptom-msk.myshopify.com"></a>
+  </div>
+  <div class="header__fraction">
+    <button id="header-brands-button" class="header__button" type='button'>
+      <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
+      БРЕНДЫ
+    </button>
+    <button id="header-categories-button" class="header__button" type='button'>
+      <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
+      КАТЕГОРИИ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-subscribe-button" class="header__button" type='button'>
+      <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ПОДПИСАТЬСЯ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-login-button" class="header__button header__button_login" type='button'>
+      <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ВОЙТИ
+    </button>
+    <a id="header-wishes-button" class="header__button header__button_wishes"
+      href="https://symptom-msk.myshopify.com/wishes">
+      <span id="wishes-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ЖЕЛАНИЯ
+    </a>
+    <a id="header-cart-button" class="header__button header__button_cart"
+      href="https://symptom-msk.myshopify.com/cart">
+      <span id="cart-outline" class="header__button-outline header__button-outline_hidden"></span>
+      КОРЗИНА(00)
+    </a>
+  </div>
+</header>
+
+<!-- MENU: BRANDS -->
+<div id="brands-menu" class="menu menu_hidden">
+  <nav class="menu__left-half">
+    <ul>
+      <li id="link-to-other-objects" class="menu__list-element"><a href="/collections/other-objects" class="menu__link">Other Objects</a></li>
+      <li id="link-to-black-form" class="menu__list-element"><a href="/collections/black-form" class="menu__link">Black.Form</a></li>
+      <li id="link-to-not-concept" class="menu__list-element"><a href="/collections/not-concept" class="menu__link">Not Concept</a></li>
+      <li id="link-to-perfert" class="menu__list-element"><a href="/collections/perfert" class="menu__link">Perfert</a></li>
+      <li id="link-to-1991" class="menu__list-element"><a href="/collections/1991" class="menu__link">1991</a></li>
+      <li id="link-to-liberte" class="menu__list-element"><a href="/collections/liberte" class="menu__link">Liberte</a></li>
+      <li id="link-to-natalie-tonkal" class="menu__list-element"><a href="/collections/natalie-tonkal" class="menu__link">Natalie Tonkal</a></li>
+      <li id="link-to-anna-maslovskaya" class="menu__list-element"><a href="/collections/anna-maslovskaya" class="menu__link">Anna Maslovskaya</a>
+    </ul>
+    <ul>
+      <li id="link-to-sub-rosa" class="menu__list-element"><a href="/collections/sub-rosa" class="menu__link">Sub Rosa</a></li>
+      <li id="link-to-hubris" class="menu__list-element"><a href="/collections/hubris" class="menu__link">HUBRIS</a></li>
+      <li id="link-to-atauchi" class="menu__list-element"><a href="/collections/atauchi" class="menu__link">Atauchi</a></li>
+      <li id="link-to-arha" class="menu__list-element"><a href="/collections/arha" class="menu__link">Arha</a></li>
+    </ul>
+    <ul>
+      <li id="link-to-odor-objects" class="menu__list-element"><a href="/collections/odor-objects" class="menu__link">Odor Objects</a></li>
+      <li id="link-to-perfume-opera" class="menu__list-element"><a href="/collections/perfume-opera" class="menu__link">Perfume Opera</a></li>
+      <li id="link-to-veta-perfume" class="menu__list-element"><a href="/collections/perfume-opera" class="menu__link">Veta Perfume</a></li>
+      <li id="link-to-behurr" class="menu__list-element"><a href="/collections/behurr" class="menu__link">Behurr</a></li>
+      <li id="link-to-sands" class="menu__list-element"><a href="/collections/sands" class="menu__link">Sands</a></li>
+
+      </li>
+    </ul>
+  </nav>
+  <div class="menu__right-half">
+    <img id="image-for-other-objects" class="menu__image menu__image_hidden"
+      src="{{ 'brands-other-objects.jpg' | asset_img_url: 'master' }}"
+      alt="Other Objects">
+    <img id="image-for-black-form" class="menu__image menu__image_hidden"
+      src="{{ 'brands-black-form.jpg' | asset_img_url: 'master' }}"
+      alt="Black.Form">
+    <img id="image-for-not-concept" class="menu__image menu__image_hidden"
+      src="{{ 'brands-not-concept.jpg' | asset_img_url: 'master' }}"
+      alt="Not Concept">
+    <img id="image-for-perfert" class="menu__image menu__image_hidden"
+      src="{{ 'brands-perfert.jpg' | asset_img_url: 'master' }}"
+      alt="Perfert">
+    <img id="image-for-1991" class="menu__image menu__image_hidden"
+      src="{{ 'brands-1991.jpg' | asset_img_url: 'master' }}"
+      alt="1991">
+    <img id="image-for-liberte" class="menu__image menu__image_hidden"
+      src="{{ 'brands-liberte.jpg' | asset_img_url: 'master' }}"
+      alt="Liberte">
+    <img id="image-for-natalie-tonkal" class="menu__image menu__image_hidden"
+      src="{{ 'brands-natalie-tonkal.jpg' | asset_img_url: 'master' }}"
+      alt="Natalie Tonkal">
+    <img id="image-for-anna-maslovskaya" class="menu__image menu__image_hidden"
+      src="{{ 'brands-anna-maslovskaya.jpg' | asset_img_url: 'master' }}"
+      alt="Anna Maslovskaya">
+    <img id="image-for-sub-rosa" class="menu__image menu__image_hidden"
+      src="{{ 'brands-sub-rosa.jpg' | asset_img_url: 'master' }}"
+      alt="Sub Rosa">
+    <img id="image-for-hubris" class="menu__image menu__image_hidden"
+      src="{{ 'brands-hubris.jpg' | asset_img_url: 'master' }}"
+      alt="HUBRIS">
+    <img id="image-for-atauchi" class="menu__image menu__image_hidden"
+      src="{{ 'brands-atauchi.jpg' | asset_img_url: 'master' }}"
+      alt="Atauchi">
+    <img id="image-for-arha" class="menu__image menu__image_hidden"
+      src="{{ 'brands-arha.jpg' | asset_img_url: 'master' }}"
+      alt="Arha">
+    <img id="image-for-odor-objects" class="menu__image menu__image_hidden"
+      src="{{ 'brands-odor-objects.jpg' | asset_img_url: 'master' }}"
+      alt="Odor Objects">
+    <img id="image-for-perfume-opera" class="menu__image menu__image_hidden"
+      src="{{ 'brands-perfume-opera.jpg' | asset_img_url: 'master' }}"
+      alt="Perfume Opera">
+      <img id="image-for-veta-perfume" class="menu__image menu__image_hidden"
+      src="{{ 'brands-veta-perfume.jpg' | asset_img_url: 'master' }}"
+      alt="Veta Perfume">
+    <img id="image-for-behurr" class="menu__image menu__image_hidden"
+      src="{{ 'brands-behurr.jpg' | asset_img_url: 'master' }}"
+      alt="Behurr">
+    <img id="image-for-sands" class="menu__image menu__image_hidden"
+      src="{{ 'brands-sands.jpg' | asset_img_url: 'master' }}"
+      alt="Sands">
+  </div>
+</div>
+
+
+<!-- MENU: CATEGORIES -->
+<div id="categories-menu" class="menu menu_hidden">
+  <nav class="menu__left-half">
+    <ul>
+      <li id="link-to-pendals" class="menu__list-element"><a href="" class="menu__link">Подвески</a></li>
+      <li id="link-to-earrings" class="menu__list-element"><a href="" class="menu__link">Серьги</a></li>
+      <li id="link-to-rings" class="menu__list-element"><a href="" class="menu__link">Кольца</a></li>
+      <li id="link-to-cuffs" class="menu__list-element"><a href="" class="menu__link">Каффы</a></li>
+      <li id="link-to-bracelets" class="menu__list-element"><a href="/collections/браслеты" class="menu__link">Браслеты</a></li>
+      <li id="link-to-hairpins" class="menu__list-element"><a href="" class="menu__link">Заколки</a></li>
+			<li id="link-to-feronniere" class="menu__list-element"><a href="" class="menu__link">Фероньерки</a></li>
+    </ul>
+    <ul>
+      <li id="link-to-perfume" class="menu__list-element"><a href="" class="menu__link">Духи</a></li>
+      <li id="link-to-solid-perfume" class="menu__list-element"><a href="" class="menu__link">Твёрдые духи</a></li>
+      <li id="link-to-clothes" class="menu__list-element"><a href="" class="menu__link">Одежда</a></li>
+      <li id="link-to-headwear" class="menu__list-element"><a href="" class="menu__link">Головные уборы</a></li>
+    </ul>
+  </nav>
+  <div class="menu__right-half">
+    <img id="image-for-pendals" class="menu__image menu__image_hidden"
+      src="{{ 'categories-pendals.jpg' | asset_img_url: 'master' }}"
+      alt="Подвески">
+    <img id="image-for-earrings" class="menu__image menu__image_hidden"
+      src="{{ 'categories-earrings.jpg' | asset_img_url: 'master' }}"
+      alt="Серьги">
+    <img id="image-for-rings" class="menu__image menu__image_hidden"
+      src="{{ 'categories-rings.jpg' | asset_img_url: 'master' }}"
+      alt="Кольца">
+    <img id="image-for-cuffs" class="menu__image menu__image_hidden"
+      src="{{ 'categories-cuffs.jpg' | asset_img_url: 'master' }}"
+      alt="Каффы">
+    <img id="image-for-bracelets" class="menu__image menu__image_hidden"
+      src="{{ 'categories-bracelets.jpg' | asset_img_url: 'master' }}"
+      alt="Браслеты">
+    <img id="image-for-hairpins" class="menu__image menu__image_hidden"
+      src="{{ 'categories-hairpins.jpg' | asset_img_url: 'master' }}"
+      alt="Заколки">
+    <img id="image-for-perfume" class="menu__image menu__image_hidden"
+      src="{{ 'categories-perfume.jpg' | asset_img_url: 'master' }}"
+      alt="Духи">
+    <img id="image-for-solid-perfume" class="menu__image menu__image_hidden"
+      src="{{ 'categories-solid-perfume.jpg' | asset_img_url: 'master' }}"
+      alt="Твёрдые духи">
+    <img id="image-for-clothes" class="menu__image menu__image_hidden"
+      src="{{ 'categories-clothes.jpg' | asset_img_url: 'master' }}"
+      alt="Одежда">
+    <img id="image-for-headwear" class="menu__image menu__image_hidden"
+      src="{{ 'categories-headwear.jpg' | asset_img_url: 'master' }}"
+      alt="Головные уборы">
+    <img id="image-for-feronniere" class="menu__image menu__image_hidden"
+      src="{{ 'categories-feronniere.jpg' | asset_img_url: 'master' }}"
+      alt="Фероньерки">
+  </div>
+</div>
+
+<!-- FORM: SUBSCRIBE -->
+<form id="subscribe-form" class="form form_hidden" novalidate>
+<h3 class="heading heading_form">Давайте познакомимся</h3>
+<div class="form__grid">
+	<div class="form__fraction form__left-half">
+	<div class="input input_form">
+		<h3 class="input__heading">E-mail:</h3>
+		<input id="subscribe-email" name="subscribe-email" class="input__field" type="email" value=""
+		placeholder="your@dolphine.com" required>
+		<span id="subscribe-email-error" class="input__error"></span>
+	</div>
+	</div>
+	<div class="form__fraction form__right-half">
+	<div class="input input_form">
+		<h3 class="input__heading">Ваше имя:</h3>
+		<input id="subscribe-name" name="subscribe-name" class="input__field" type="text" minlength="2" maxlength="20"
+		value="" placeholder="Дженгу" required>
+		<span id="subscribe-name-error" class="input__error"></span>
+	</div>
+	<label class="checkbox checkbox_form">
+		<div>
+		<input id="subscribe-rules-agreement" name="subscribe-rules-agreement"
+			class="checkbox__true-checkbox checkbox__true-checkbox_required" type="checkbox" value="agreed" checked
+			required>
+		<div class="checkbox__fake-checkbox"></div>
+		</div>
+		<p class="checkbox__description">Нажимая кнопку «Подписаться», вы даете согласие на обработку ваших
+		персональных данных согласно положениям <a class="paragraph__link" href="./pages/confidentiality.html"> по
+			ссылке.</a></p>
+	</label>
+	<button class="black-button submit-button" type="submit">Подписаться</button>
+	</div>
+</div>
+</form>
+
+<!-- FORM: LOG IN -->
+<form id="login-form" class="form form_hidden" novalidate>
+<h3 class="heading heading_form">Вход</h3>
+<div class="form__grid">
+	<div class="form__fraction form__left-half">
+	<div class="input input_form">
+		<h3 class="input__heading">E-mail:</h3>
+		<input id="login-email" name="login-email" class="input__field" type="email" value=""
+		placeholder="your@dolphine.com" required>
+		<span id="login-email-error" class="input__error"></span>
+	</div>
+	<button id="signin-button" class="hollow-button hollow-button_" type='button'>Регистрация</button>
+	</div>
+	<div class="form__fraction form__right-half">
+	<div class="input input_form">
+		<h3 class="input__heading">Пароль:</h3>
+		<input id="login-password" name="login-password" class="input__field" type="password" value=""
+		placeholder="***********" required>
+		<span id="login-password-error" class="input__error"></span>
+	</div>
+	<button class="black-button submit-button" type="submit">Вход</button>
+	<button id="recovery-button" class="form__recovery-button" type='button'>Забыли пароль?</button>
+	</div>
+</div>
+</form>
+
+
+<!-- FORM: SIGN IN -->
+<form id="signin-form" class="form form_hidden" novalidate>
+<h3 class="heading heading_form">Регистрация</h3>
+<div class="form__grid">
+	<div class="form__left-half">
+	<div class="input input_form">
+		<h3 class="input__heading">E-mail:</h3>
+		<input id="signin-email" name="signin-email" class="input__field" type="email" value=""
+		placeholder="your@dolphine.com" required>
+		<span id="signin-email-error" class="input__error"></span>
+	</div>
+	<label class="checkbox checkbox_form">
+		<div>
+		<input id="signin-mailing" name="signin-mailing" class="checkbox__true-checkbox" type="checkbox"
+			value="subscribed" checked>
+		<div class="checkbox__fake-checkbox"></div>
+		</div>
+		<p class="checkbox__description">Я хочу получать информацию о новых коллекциях и специальных предложениях на
+		указанный адрес электронной почты</p>
+	</label>
+	</div>
+	<div class="form__right-half">
+	<div class="input input_form">
+		<h3 class="input__heading">Пароль:</h3>
+		<input id="signin-password" name="signin-password" class="input__field" type="password" minlength="6"
+		maxlength="24" value="" placeholder="***********" required>
+		<span id="signin-password-error" class="input__error"></span>
+	</div>
+	<label class="checkbox checkbox_form">
+		<div>
+		<input id="signin-rules-agreement" name="signin-rules-agreement"
+			class="checkbox__true-checkbox checkbox__true-checkbox_required" type="checkbox" value="agreed" checked
+			required>
+		<div class="checkbox__fake-checkbox"></div>
+		</div>
+		<p class="checkbox__description">Нажимая кнопку «Регистрация», вы даете согласие на обработку ваших
+		персональных данных согласно положениям <a class="paragraph__link" href="./pages/confidentiality.html"> по
+			ссылке.</a></p>
+	</label>
+	<button class="black-button submit-button" type="submit">Регистрация</button>
+	</div>
+</div>
+</form>
+
+
+<!-- FORM: PASSWORD RECOVERY -->
+<form id="password-recovery-form" class="form form_hidden" novalidate>
+<h3 class="heading heading_form">Восстановление</h3>
+<div class="form__grid">
+	<div class="form__left-half"></div>
+	<div class="form__right-half">
+	<div class="input input_form">
+		<h3 class="input__heading">E-mail</h3>
+		<input id="recovery-email" name="recovery-email" class="input__field" type="email" value=""
+		placeholder="your@dolphine.com" required>
+		<span id="recovery-email-error" class="input__error"></span>
+	</div>
+	<p class="paragraph paragraph_form">Укажите свой Email.<br>Ссылку на создание нового пароля вы получите по
+		электронной почте.</p>
+	<button class="black-button submit-button" type="submit">Восстановить пароль</button>
+	</div>
+</div>
+</form>
+
+<div class="cart">
+  <div class="cart-items">
+    <h1 class="heading">2 товара</h1>
+    <div class="cart-item">
+      <div class="cart-item__info">
+        <span class="cart-item__spec">Anna Maslovskaya</span>
+        <span class="cart-item__spec">Prayer</span>
+        <span class="cart-item__spec">Material: Gold</span>
+        <span class="cart-item__spec">Size: 7.5</span>
+        <span class="cart-item__price">19 000 Rub.</span>
       </div>
-      <div class="cart-item">
-        <div class="cart-item__info">
-          <span class="cart-item__spec">38</span>
-          <span class="cart-item__spec">Playroe</span>
-          <span class="cart-item__spec">Material: Silver</span>
-          <span class="cart-item__spec">Size: 8</span>
-          <span class="cart-item__price">10 000 Rub.</span>
-        </div>
-        <img class="cart-item__image" src="../images/content/ring-playroe.jpg" alt="">
-        <div class="cart-item__buttons">
-          <button class="cart-item__edit-button">Edit</button>
-          <button class="cart-item__remove-button"></button>
-        </div>
+      <img class="cart-item__image" src="../images/content/ring-prayer.jpg" alt="">
+      <div class="cart-item__buttons">
+        <button class="cart-item__edit-button"></button>
+        <button class="cart-item__remove-button"></button>
       </div>
     </div>
-
-    <form class="order">
-      <h4 class="input__heading">Способ доставки:</h4>
-      <div class="delivery">
-        <label class="delivery__method">
-          <input class="delivery__true-radio" type="radio" name="method">
-          <div class="delivery__fake-radio delivery__fake-radio_moscow">Доставка по Москве</div>
-        </label>
-        <label class="delivery__method">
-          <input class="delivery__true-radio" type="radio" name="method" checked>
-          <div class="delivery__fake-radio delivery__fake-radio_russia">Доставка по России</div>
-        </label>
-        <label class="delivery__method">
-          <input class="delivery__true-radio" type="radio" name="method">
-          <span class="delivery__fake-radio delivery__fake-radio_pickup">Самовывоз</span>
-        </label>
-        <label class="delivery__method">
-          <input class="delivery__true-radio" type="radio" name="method">
-          <span class="delivery__fake-radio delivery__fake-radio_worldwide">Доставка по миру</span>
-        </label>
+    <div class="cart-item">
+      <div class="cart-item__info">
+        <span class="cart-item__spec">38</span>
+        <span class="cart-item__spec">Playroe</span>
+        <span class="cart-item__spec">Material: Silver</span>
+        <span class="cart-item__spec">Size: 8</span>
+        <span class="cart-item__price">10 000 Rub.</span>
       </div>
-      <p class="paragraph">Ваш заказ будет доставлен в течение 1-5 рабочих дней по Мск, Мск обл., СПб.
-        Товар будет доставлен в течении 4-5 недель по РФ и миру.</p>
-      <div class="order__alignment">
-        <div class="input input_order-s">
-          <h3 class="input__heading">Имя:</h3>
-          <input class="input__field" type="text" placeholder="Амар">
-          <span class="input__error">Укажите имя</span>
-        </div>
-        <div class="input input_order-s">
-          <h3 class="input__heading">Фамилия:</h3>
-          <input class="input__field" type="text" placeholder="Скай">
-          <span class="input__error">Укажите фамилию</span>
-        </div>
+      <img class="cart-item__image" src="../images/content/ring-playroe.jpg" alt="">
+      <div class="cart-item__buttons">
+        <button class="cart-item__edit-button"></button>
+        <button class="cart-item__remove-button"></button>
       </div>
-      <div class="input input_order-m">
-        <h3 class="input__heading">Телефон:</h3>
-        <input class="input__field" type="tel" placeholder="+7 (000) 000 00 00">
-        <span class="input__error">Введите телефон</span>
-      </div>
-      <div class="input input_order-m">
-        <h3 class="input__heading">E-mail:</h3>
-        <input class="input__field" type="email" placeholder="your@dolphine.com">
-        <span class="input__error">Укажите почту</span>
-      </div>
-      <label class="checkbox checkbox_order">
-        <div>
-          <input class="checkbox__true-checkbox" type="checkbox" checked>
-          <div class="checkbox__fake-checkbox"></div>
-        </div>
-        <p class="checkbox__description">Подписаться на нас</p>
-      </label>
-      <div class="order__alignment">
-        <div class="input input_order-s">
-          <h3 class="input__heading">Город:</h3>
-          <input class="input__field" type="text" placeholder="Промес-сити">
-          <span class="input__error">Укажите город</span>
-        </div>
-        <div class="input input_order-l">
-          <h3 class="input__heading">Адрес:</h3>
-          <input class="input__field" type="text" placeholder="пр. Антрацита, д.250 кв.1">
-          <span class="input__error">Введите адрес</span>
-        </div>
-      </div>
-      <div class="input input_order-s">
-        <h3 class="input__heading">Почтовый индекс:</h3>
-        <input class="input__field" type="number" placeholder="121248">
-        <span class="input__error">Укажите индекс</span>
-      </div>
-      <div class="input input_order-s">
-        <h3 class="input__heading">Промокод:</h3>
-        <input class="input__field" type="text" placeholder="kaIF30">
-        <span class="input__error">Укажите индекс</span>
-      </div>
-      <p class="paragraph paragraph_order">Ваши личные данные будут использоваться для обработки ваших заказов,
-        для упрощения использования нашего веб-сайта и для других целей,
-        описанных в нашей <a class="paragraph__link" href="./confidentiality.html"> политике конфиденциальности</a>.</p>
-      <label class="checkbox checkbox_order">
-        <div>
-          <input class="checkbox__true-checkbox" type="checkbox" checked>
-          <div class="checkbox__fake-checkbox"></div>
-        </div>
-        <p class="checkbox__description">Я прочитал и согласен с правилами сайта согласно тексту <a
-            class="paragraph__link" href="./offer.html"> оферты</a>.</p>
-      </label>
-      <button class="black-button black-button_order">Оплата</button>
-    </form>
+    </div>
   </div>
 
-{% javascript %}
+  <form class="order">
+    <h4 class="input__heading">Способ доставки:</h4>
+    <div class="delivery">
+      <label class="delivery__method">
+        <input class="delivery__true-radio" type="radio" name="method">
+        <div class="delivery__fake-radio delivery__fake-radio_moscow">Доставка по Москве</div>
+      </label>
+      <label class="delivery__method">
+        <input class="delivery__true-radio" type="radio" name="method" checked>
+        <div class="delivery__fake-radio delivery__fake-radio_russia">Доставка по России</div>
+      </label>
+      <label class="delivery__method">
+        <input class="delivery__true-radio" type="radio" name="method">
+        <span class="delivery__fake-radio delivery__fake-radio_pickup">Самовывоз</span>
+      </label>
+      <label class="delivery__method">
+        <input class="delivery__true-radio" type="radio" name="method">
+        <span class="delivery__fake-radio delivery__fake-radio_worldwide">Доставка по миру</span>
+      </label>
+    </div>
+    <p class="paragraph">Ваш заказ будет доставлен в течение 1-5 рабочих дней по Мск, Мск обл., СПб.
+      Товар будет доставлен в течении 4-5 недель по РФ и миру.</p>
+    <div class="order__alignment">
+      <div class="input input_order-s">
+        <h3 class="input__heading">Имя:</h3>
+        <input class="input__field" type="text" placeholder="Амар">
+        <span class="input__error">Укажите имя</span>
+      </div>
+      <div class="input input_order-s">
+        <h3 class="input__heading">Фамилия:</h3>
+        <input class="input__field" type="text" placeholder="Скай">
+        <span class="input__error">Укажите фамилию</span>
+      </div>
+    </div>
+    <div class="input input_order-m">
+      <h3 class="input__heading">Телефон:</h3>
+      <input class="input__field" type="tel" placeholder="+7 (000) 000 00 00">
+      <span class="input__error">Введите телефон</span>
+    </div>
+    <div class="input input_order-m">
+      <h3 class="input__heading">E-mail:</h3>
+      <input class="input__field" type="email" placeholder="your@dolphine.com">
+      <span class="input__error">Укажите почту</span>
+    </div>
+    <label class="checkbox checkbox_order">
+      <div>
+        <input class="checkbox__true-checkbox" type="checkbox" checked>
+        <div class="checkbox__fake-checkbox"></div>
+      </div>
+      <p class="checkbox__description">Подписаться на нас</p>
+    </label>
+    <div class="order__alignment">
+      <div class="input input_order-s">
+        <h3 class="input__heading">Город:</h3>
+        <input class="input__field" type="text" placeholder="Промес-сити">
+        <span class="input__error">Укажите город</span>
+      </div>
+      <div class="input input_order-l">
+        <h3 class="input__heading">Адрес:</h3>
+        <input class="input__field" type="text" placeholder="пр. Антрацита, д.250 кв.1">
+        <span class="input__error">Введите адрес</span>
+      </div>
+    </div>
+    <div class="input input_order-s">
+      <h3 class="input__heading">Почтовый индекс:</h3>
+      <input class="input__field" type="number" placeholder="121248">
+      <span class="input__error">Укажите индекс</span>
+    </div>
+    <div class="input input_order-s">
+      <h3 class="input__heading">Промокод:</h3>
+      <input class="input__field" type="text" placeholder="kaIF30">
+      <span class="input__error">Укажите индекс</span>
+    </div>
+    <p class="paragraph paragraph_order">Ваши личные данные будут использоваться для обработки ваших заказов,
+      для упрощения использования нашего веб-сайта и для других целей,
+      описанных в нашей <a class="paragraph__link" href="./confidentiality.html"> политике конфиденциальности</a>.</p>
+    <label class="checkbox checkbox_order">
+      <div>
+        <input class="checkbox__true-checkbox" type="checkbox" checked>
+        <div class="checkbox__fake-checkbox"></div>
+      </div>
+      <p class="checkbox__description">Я прочитал и согласен с правилами сайта согласно тексту <a
+          class="paragraph__link" href="./offer.html"> оферты</a>.</p>
+    </label>
+    <button class="black-button black-button_order">Оплата</button>
+  </form>
+</div>
 
-// HEADER
-
-const main = document.querySelector('main');
-const header = document.querySelector('header');
-const headerLogo = document.querySelector('#header-logo');
-
-const buttons = document.querySelectorAll('.header__button');
-const headerBrandsButton = document.querySelector('#header-brands-button');
-const headerCategoriesButton = document.querySelector('#header-categories-button');
-const headerSubscribeButton = document.querySelector('#header-subscribe-button');
-const headerLogInButton = document.querySelector('#header-login-button');
-const headerWishesButton = document.querySelector('#header-wishes-button');
-const headerCartButton = document.querySelector('#header-cart-button');
-
-const outlines = document.querySelectorAll('.header__button-outline');
-const brandsOutline = document.querySelector('#brands-outline');
-const categoriesOutline = document.querySelector('#categories-outline');
-const subscribeOutline = document.querySelector('#subscribe-outline');
-const logInOutline = document.querySelector('#login-outline');
-const wishesOutline = document.querySelector('#wishes-outline');
-const cartOutline = document.querySelector('#cart-outline');
-
-const menus = document.querySelectorAll('.menu');
-const brandsMenu = document.querySelector('#brands-menu');
-const categoriesMenu = document.querySelector('#categories-menu');
-
-const forms = document.querySelectorAll('.form');
-const subscribeForm = document.querySelector('#subscribe-form');
-const logInForm = document.querySelector('#login-form');
-const signInButton = document.querySelector('#signin-button');
-const recoveryButton = document.querySelector('#recovery-button');
-const signInForm = document.querySelector('#signin-form');
-const passwordRecoveryForm = document.querySelector('#password-recovery-form');
-
-function headerTurnsBlack() {
-	if (header.classList.contains('header_two-colored')) {
-		headerLogo.classList.remove('header__logo_white');
-		buttons.forEach(button => button.classList.remove('header__button_white'));
-		wishesOutline.classList.remove('header__button-outline_white');
-		cartOutline.classList.remove('header__button-outline_white');
-	}
-};
-
-function headerTurnsWhite() {
-	if (header.classList.contains('header_two-colored')) {
-		headerLogo.classList.add('header__logo_white');
-		buttons.forEach(button => button.classList.add('header__button_white'));
-		wishesOutline.classList.add('header__button-outline_white');
-		cartOutline.classList.add('header__button-outline_white');
-	}
-};
-
-function showOutline(outline) {
-	outline.classList.remove('header__button-outline_hidden');
-};
-
-function hideAllOutlines() {
-	outlines.forEach(outline => outline.classList.add('header__button-outline_hidden'));
-};
-
-function showPopup(popup, hidingClass) {
-	headerTurnsBlack();
-	popup.classList.remove(hidingClass);
-};
-
-function hideAllPopups() {
-	menus.forEach(menu => menu.classList.add('menu_hidden'));
-	forms.forEach(form => form.classList.add('form_hidden'));
-	hideAllOutlines();
-	headerTurnsWhite();
-};
-
-headerBrandsButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(brandsOutline);
-	showPopup(brandsMenu, 'menu_hidden');
-});
-
-headerCategoriesButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(categoriesOutline);
-	showPopup(categoriesMenu, 'menu_hidden');
-});
-
-headerSubscribeButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(subscribeOutline);
-	showPopup(subscribeForm, 'form_hidden');
-});
-
-headerLogInButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(logInOutline);
-	showPopup(logInForm, 'form_hidden');
-});
-
-signInButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(logInOutline);
-	showPopup(signInForm, 'form_hidden');
-});
-
-recoveryButton.addEventListener('click', () => {
-	hideAllPopups();
-	showOutline(logInOutline);
-	showPopup(passwordRecoveryForm, 'form_hidden');
-});
-
-headerWishesButton.addEventListener('click', () => {
-	hideAllOutlines();
-	showOutline(wishesOutline);
-});
-
-headerCartButton.addEventListener('click', () => {
-	hideAllOutlines();
-	showOutline(cartOutline);
-});
-
-// закрываем меню и футеры кликом по основному разделу
-document.addEventListener('keydown', event => {
-	if (event.key == 'Escape') hideAllPopups();
-});
-
-// закрываем меню и футеры кликом по основному разделу
-main.addEventListener('click', () => hideAllPopups());
-
-// закрываем меню и футеры кликом по футеру
-document.addEventListener('click', event => {
-	let isFooter = event.target.closest('.footer');
-	if (isFooter) hideAllPopups();
-});
-
-// закрываем меню и футеры кликом по основному разделу
-// (а кнопке "желания" возвращаем овал)
-document.addEventListener('keydown', event => {
-	if (event.key == 'Escape') {
-    hideAllPopups();
-    cartOutline.classList.remove('header__button-outline_hidden');
-  };
-});
-
-// закрываем меню и футеры кликом по основному разделу
-// (а кнопке "желания" возвращаем овал)
-main.addEventListener('click', () => {
-  hideAllPopups();
-  cartOutline.classList.remove('header__button-outline_hidden');
-});
-
-{% endjavascript %}
-
+{{ 'common.js' | asset_url | script_tag }}
+{{ 'cart.js' | asset_url | script_tag }}
