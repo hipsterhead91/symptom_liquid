@@ -1,40 +1,68 @@
-<header class="header header_two-colored">
-  <div class="header__fraction">
-    <a id="header-logo" class="header__logo header__logo_white" href="https://symptom-msk.myshopify.com"></a>
+<div class="mobileHide">
+  <header class="header header_two-colored">
+    <div class="header__fraction">
+      <a id="header-logo" class="header__logo header__logo_white" href="https://symptom-msk.myshopify.com"></a>
+    </div>
+    <div class="header__fraction">
+      <button id="header-brands-button" class="header__button header__button_white" type='button'>
+        <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
+        БРЕНДЫ
+      </button>
+      <button id="header-categories-button" class="header__button header__button_white" type='button'>
+        <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
+        КАТЕГОРИИ
+      </button>
+    </div>
+    <div class="header__fraction">
+      <button id="header-subscribe-button" class="header__button header__button_white" type='button'>
+        <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
+        ПОДПИСАТЬСЯ
+      </button>
+    </div>
+    <div class="header__fraction">
+      <button id="header-login-button" class="header__button header__button_login header__button_white" type='button'>
+        <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
+        ВОЙТИ
+      </button>
+      <a id="header-finder-button" class="header__button finder header__button_white"
+        href="#">
+        <span id="finder-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
+        НАЙТИ
+      </a>
+      <a id="header-cart-button" class="header__button header__button_cart header__button_white"
+        href="https://symptom-msk.myshopify.com/cart">
+        <span id="cart-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
+        КОРЗИНА(00)
+      </a>
+    </div>
+  </header>
+</div>
+
+<!-- <div class="mobileShow">
+  <div class="menu-popup menu-popup_hidden">
+    <div class="fake-header">
+      <a href="./index.html">
+        <div class="fake-logo"></div>
+      </a>
+      <button class="menu-close-button">Закрыть</button>
+    </div>
+    <nav class="menu">
+      <ul class="menu-list">
+        <li class="menu-list-element"><a class="menu-link" href="./pages/brands/brands.html">Бренды</a></li>
+        <li class="menu-list-element"><a class="menu-link" href="./pages/categorys/categorys.html">Категории</a></li>
+      </ul>
+      <ul class="menu-list">
+        <li class="menu-list-element"><a class="menu-link" href="./pages/log_in/log_in.html">Войти</a></li>
+        <li class="menu-list-element"><a class="menu-link" href="./pages/wishes/wishes.html">Желания</a></li>
+        <li class="menu-list-element"><a class="menu-link" href="./pages/cart/cart.html">Корзина(00)</a></li>
+      </ul>
+      <ul class="menu-list">
+        <li class="menu-list-element"><a class="menu-link" href="#">Подписаться</a></li>
+        <li class="menu-list-element"><a class="menu-link" href="./pages/about_us/about_us.css">О нас</a></li>
+      </ul>
+    </nav>
   </div>
-  <div class="header__fraction">
-    <button id="header-brands-button" class="header__button header__button_white" type='button'>
-      <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
-      БРЕНДЫ
-    </button>
-    <button id="header-categories-button" class="header__button header__button_white" type='button'>
-      <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
-      КАТЕГОРИИ
-    </button>
-  </div>
-  <div class="header__fraction">
-    <button id="header-subscribe-button" class="header__button header__button_white" type='button'>
-      <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ПОДПИСАТЬСЯ
-    </button>
-  </div>
-  <div class="header__fraction">
-    <button id="header-login-button" class="header__button header__button_login header__button_white" type='button'>
-      <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ВОЙТИ
-    </button>
-    <a id="header-wishes-button" class="header__button header__button_wishes header__button_white"
-      href="https://symptom-msk.myshopify.com/wishes">
-      <span id="wishes-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
-      ЖЕЛАНИЯ
-    </a>
-    <a id="header-cart-button" class="header__button header__button_cart header__button_white"
-      href="https://symptom-msk.myshopify.com/cart">
-      <span id="cart-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
-      КОРЗИНА(00)
-    </a>
-  </div>
-</header>
+</div> -->
 
 <!-- MENU: BRANDS -->
 <div id="brands-menu" class="menu menu_hidden">
@@ -54,6 +82,7 @@
       <li id="link-to-hubris" class="menu__list-element"><a href="/collections/hubris" class="menu__link">HUBRIS</a></li>
       <li id="link-to-atauchi" class="menu__list-element"><a href="/collections/atauchi" class="menu__link">Atauchi</a></li>
       <li id="link-to-arha" class="menu__list-element"><a href="/collections/arha" class="menu__link">Arha</a></li>
+      <li id="link-to-silvester" class="menu__list-element"><a href="/collections/silvester" class="menu__link">Silvester</a></li>
     </ul>
     <ul>
       <li id="link-to-odor-objects" class="menu__list-element"><a href="/collections/odor-objects" class="menu__link">Odor Objects</a></li>
@@ -61,8 +90,7 @@
       <li id="link-to-veta-perfume" class="menu__list-element"><a href="/collections/veta-perfume" class="menu__link">Veta Perfume</a></li>
       <li id="link-to-behurr" class="menu__list-element"><a href="/collections/behurr" class="menu__link">Behurr</a></li>
       <li id="link-to-sands" class="menu__list-element"><a href="/collections/sands" class="menu__link">Sands</a></li>
-
-      </li>
+      <li id="link-to-malkenza" class="menu__list-element"><a href="/collections/malkenza" class="menu__link">Malkenza</a></li>
     </ul>
   </nav>
   <div class="menu__right-half">
@@ -117,6 +145,12 @@
     <img id="image-for-sands" class="menu__image menu__image_hidden"
       src="{{ 'brands-sands.jpg' | asset_img_url: 'master' }}"
       alt="Sands">
+    <img id="image-for-malkenza" class="menu__image menu__image_hidden"
+      src="{{ 'brands-malkenza.jpg' | asset_img_url: 'master' }}"
+      alt="Malkenza">
+    <img id="image-for-silvester" class="menu__image menu__image_hidden"
+      src="{{ 'brands-silvester.jpg' | asset_img_url: 'master' }}"
+      alt="Silvester">
   </div>
 </div>
 
@@ -137,7 +171,8 @@
       <li id="link-to-perfume" class="menu__list-element"><a href="/collections/парфюмерия" class="menu__link">Духи</a></li>
       <li id="link-to-solid-perfume" class="menu__list-element"><a href="/collections/парфюм" class="menu__link">Твёрдые духи</a></li>
       <li id="link-to-clothes" class="menu__list-element"><a href="/collections/одежда" class="menu__link">Одежда</a></li>
-      <li id="link-to-headwear" class="menu__list-element"><a href="/collections/без-категории-головной-убор" class="menu__link">Головные уборы</a></li>
+      <li id="link-to-headwear" class="menu__list-element"><a href="/collections/головные-уборы" class="menu__link">Головные уборы</a></li>
+      <li id="link-to-ceramics" class="menu__list-element"><a href="/collections/керамика" class="menu__link">Керамика</a></li>
     </ul>
   </nav>
   <div class="menu__right-half">
@@ -174,6 +209,9 @@
     <img id="image-for-feronniere" class="menu__image menu__image_hidden"
       src="{{ 'categories-feronniere.jpg' | asset_img_url: 'master' }}"
       alt="Фероньерки">
+    <img id="image-for-ceramics" class="menu__image menu__image_hidden"
+      src="{{ 'categories-ceramics.jpg' | asset_img_url: 'master' }}"
+      alt="Керамика">
   </div>
 </div>
 

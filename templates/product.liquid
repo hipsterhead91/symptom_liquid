@@ -2,16 +2,54 @@
   body {background-color: #fafafa;}
 </style>
 
+<header class="header">
+  <div class="header__fraction">
+    <a id="header-logo" class="header__logo" href="https://symptom-msk.myshopify.com"></a>
+  </div>
+  <div class="header__fraction">
+    <button id="header-brands-button" class="header__button" type='button'>
+      <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
+      БРЕНДЫ
+    </button>
+    <button id="header-categories-button" class="header__button" type='button'>
+      <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
+      КАТЕГОРИИ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-subscribe-button" class="header__button" type='button'>
+      <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ПОДПИСАТЬСЯ
+    </button>
+  </div>
+  <div class="header__fraction">
+    <button id="header-login-button" class="header__button header__button_login" type='button'>
+      <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ВОЙТИ
+    </button>
+    <a id="header-wishes-button" class="header__button header__button_wishes"
+      href="https://symptom-msk.myshopify.com/wishes">
+      <span id="wishes-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ЖЕЛАНИЯ
+    </a>
+    <a id="header-cart-button" class="header__button header__button_cart"
+      href="https://symptom-msk.myshopify.com/cart">
+      <span id="cart-outline" class="header__button-outline header__button-outline_hidden"></span>
+      КОРЗИНА(00)
+    </a>
+  </div>
+</header>
+
 <div class="item">
   <div class="item__info">
-    <button class="back-button">
+    <!-- <button class="back-button">
       <div class="back-button__arrow"></div><span class="back-button__text">Назад</span>
-    </button>
-    <h1 class="item__brand"></h1>
-    <h2 class="item__name">{{ product.title }}</h2>
+    </button> -->
+    <h1 class="item__brand">{{ product.title }}</h1>
+    <!-- <h2 class="item__name"></h2> -->
     <p class="item__description">{{ product.description }}</p>
-    <span class="item__status">{{ product.available }}</span>
-    <span class="item__price">{{ product.price | money}}</span>
+    <!-- <span class="item__status">{{ product.available }}</span> -->
+    <span class="item__price">{{ product.price | money }}</span>
     <a href="./shipping_and_payment.html" class="item__shipping">Доставка и возврат</a>
   </div>
 
@@ -37,7 +75,8 @@
     </p>
     <div class="item__buttons item__buttons_bracelet">
       <button class="circle-like-button"></button>
-      <button class="black-button">Предзаказ</button>
+      <button class="black-button">В корзину</button>
+      <!-- {{ routes.cart_add_url }} -->
     </div>
   </div>
 </div>

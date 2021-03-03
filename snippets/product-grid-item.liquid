@@ -35,6 +35,8 @@
         </span>
       {% endif %}
       <span class="grid-link__image-centered">
+        <img class="item__image" src="{{ product | img_url: '400x400' }}" alt="{{ product.title }}">
+        {% comment %}
         {% if featured.title != '' %}
           {% unless featured.featured_image == blank %}
             {% capture img_id %}ProductImage-{{ featured.featured_image.id }}{% endcapture %}
@@ -64,6 +66,7 @@
           {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
           {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
         {% endif %}
+        {% endcomment %}
       </span>
     </span>
     <p class="grid-link__title">{{ product_title }}</p>
@@ -84,7 +87,7 @@
           {% if on_sale %}
             <span class="visually-hidden">{{ 'products.product.sale_price' | t }}</span>
           {% else %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+            <!-- <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> -->
           {% endif %}
           {{ price }}
 

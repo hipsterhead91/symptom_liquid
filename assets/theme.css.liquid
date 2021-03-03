@@ -294,7 +294,8 @@ button:hover, a:hover {
   height: 48px;
   margin-right: 12px;
   border-radius: 50%;
-  background-color: #0F0F0F;
+  background-color: #FAFAFA;
+  /* background-color: #0F0F0F; */
   background-image: url(./images/circle-like-white.svg);
   background-size: 50%;
   background-position: center;
@@ -951,7 +952,7 @@ button:hover, a:hover {
   margin-top: -2px;
 }
 
-.header__button_wishes {
+.header__button_finder {
   margin-top: -3px;
 }
 
@@ -2077,7 +2078,7 @@ button:hover, a:hover {
 }
 
 .item__brand {
-  margin-top: 25%;
+  /* margin-top: 25%; */
   font-size: 36px;
   text-transform: uppercase;
 }
@@ -2149,7 +2150,7 @@ button:hover, a:hover {
   z-index: 1;
   width: 25vw;
   height: 25vw;
-  margin: -5vh auto auto auto;
+  margin: 0vh auto auto auto;
   display: flex;
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -2246,10 +2247,10 @@ button:hover, a:hover {
   display: grid;
   margin-left: 64px;
   margin-right: 59px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: max-content;
   justify-items: center;
   align-items: center;
 }
@@ -2257,11 +2258,27 @@ button:hover, a:hover {
 .grid__item {
   justify-items: center;
   align-items: center;
+  padding-bottom: 60px;
 }
 
 .grid-link__image-centered {
   vertical-align: middle;
   width: 100%;
   overflow: hidden;
+}
+
+.grid-link__title {
+  display: block;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.grid-link__meta {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.pagination-custom {
+  text-align: center;
 }
 

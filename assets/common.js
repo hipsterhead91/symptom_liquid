@@ -9,7 +9,7 @@ const headerBrandsButton = document.querySelector('#header-brands-button');
 const headerCategoriesButton = document.querySelector('#header-categories-button');
 const headerSubscribeButton = document.querySelector('#header-subscribe-button');
 const headerLogInButton = document.querySelector('#header-login-button');
-const headerWishesButton = document.querySelector('#header-wishes-button');
+const headerFinderButton = document.querySelector('#header-finder-button');
 const headerCartButton = document.querySelector('#header-cart-button');
 
 const outlines = document.querySelectorAll('.header__button-outline');
@@ -17,7 +17,7 @@ const brandsOutline = document.querySelector('#brands-outline');
 const categoriesOutline = document.querySelector('#categories-outline');
 const subscribeOutline = document.querySelector('#subscribe-outline');
 const logInOutline = document.querySelector('#login-outline');
-const wishesOutline = document.querySelector('#wishes-outline');
+const finderOutline = document.querySelector('#finder-outline');
 const cartOutline = document.querySelector('#cart-outline');
 
 const menus = document.querySelectorAll('.menu');
@@ -36,7 +36,7 @@ function headerTurnsBlack() {
 	if (header.classList.contains('header_two-colored')) {
 		headerLogo.classList.remove('header__logo_white');
 		buttons.forEach(button => button.classList.remove('header__button_white'));
-		wishesOutline.classList.remove('header__button-outline_white');
+		finderOutline.classList.remove('header__button-outline_white');
 		cartOutline.classList.remove('header__button-outline_white');
 	}
 };
@@ -45,7 +45,7 @@ function headerTurnsWhite() {
 	if (header.classList.contains('header_two-colored')) {
 		headerLogo.classList.add('header__logo_white');
 		buttons.forEach(button => button.classList.add('header__button_white'));
-		wishesOutline.classList.add('header__button-outline_white');
+		finderOutline.classList.add('header__button-outline_white');
 		cartOutline.classList.add('header__button-outline_white');
 	}
 };
@@ -118,10 +118,10 @@ if(recoveryButton){
 	});
 };
 
-if(headerWishesButton){
-	headerWishesButton.addEventListener('click', () => {
+if(headerFinderButton){
+	headerFinderButton.addEventListener('click', () => {
 		hideAllOutlines();
-		showOutline(wishesOutline);
+		showOutline(finderOutline);
 	});
 };
 
@@ -241,6 +241,16 @@ const brandsList = [
 		menuLink: '#link-to-veta-perfume',
 		menuImage: '#image-for-veta-perfume',
 	},
+	{
+		name: 'Malkenza',
+		menuLink: '#link-to-malkenza',
+		menuImage: '#image-for-malkenza',
+	},
+	{
+		name: 'Silvester',
+		menuLink: '#link-to-silvester',
+		menuImage: '#image-for-silvester',
+	}
 ];
 
 const brandsInMenu = brandsList.filter(brand => {
@@ -322,6 +332,11 @@ const categoriesList = [
 		menuLink: '#link-to-feronniere',
 		menuImage: '#image-for-feronniere',
 	},
+	{
+		name: 'Керамика',
+		menuLink: '#link-to-ceramics',
+		menuImage: '#image-for-ceramics',
+	}
 ];
 
 const categoriesInMenu = categoriesList.filter(category => {
