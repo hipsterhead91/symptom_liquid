@@ -18,7 +18,7 @@
 
 body {
   position: relative;
-  background-color: #0F0F0F;
+  background-color: #FFFFFF;
 }
 
 main {
@@ -282,9 +282,9 @@ button:hover, a:hover {
 }
 
 .back-button__text {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 17%;
+  width: 144px;
+  height: 48px;
+  padding-top: 17px;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -1817,7 +1817,7 @@ button:hover, a:hover {
   padding-right: 3%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
 }
 
 .cart-items {
@@ -1923,7 +1923,7 @@ button:hover, a:hover {
   border-radius: 50%;
   box-sizing: border-box;
   outline: none;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
   background-image: url({{ 'edit-button.png' | asset_img_url: 'master' }});;
   background-position: center;
   background-repeat: no-repeat;
@@ -1936,7 +1936,7 @@ button:hover, a:hover {
   border-radius: 50%;
   box-sizing: border-box;
   outline: none;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
   background-image: url({{ 'close-button-cross.png' | asset_img_url: 'master' }});;
   background-position: center;
   background-repeat: no-repeat;
@@ -2028,10 +2028,14 @@ button:hover, a:hover {
 }
 
 .delivery__fake-radio_russia::before {
-  content: "Доставка по России";
+  content: "Почта России";
 }
 
-.delivery__fake-radio_pickup::before {
+.delivery__fake-radio_sdek::before {
+  content: "СДЭК";
+}
+
+.delivery__fake-radio_pickup::before  {
   content: "Самовывоз";
 }
 
@@ -2078,7 +2082,7 @@ button:hover, a:hover {
 }
 
 .item__brand {
-  /* margin-top: 25%; */
+  margin-top: 15%;
   font-size: 36px;
   text-transform: uppercase;
 }
@@ -2102,7 +2106,8 @@ button:hover, a:hover {
 }
 
 .item__description {
-  margin-bottom: 25%;
+  margin-top: 15%;
+  margin-bottom: 15%;
   font-size: 14px;
 }
 
@@ -2123,7 +2128,7 @@ button:hover, a:hover {
 
 .item__price {
   position: absolute;
-  top: 58%;
+  top: 43%;
   left: 3%;
   font-size: 36px;
 }
@@ -2153,6 +2158,18 @@ button:hover, a:hover {
   margin: 0vh auto auto auto;
   display: flex;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.item__image-collection {
+  width: 200px;
+  height: 640px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: 0vh auto auto 140vh;
+  display: flex;
 }
 
 .item__image {
@@ -2268,6 +2285,9 @@ button:hover, a:hover {
 }
 
 .grid-link__title {
+  width: 400px;
+  height: 40px;
+  font-size: 16px;
   display: block;
   text-align: center;
   font-weight: bolder;
@@ -2276,9 +2296,9 @@ button:hover, a:hover {
 .grid-link__meta {
   text-align: center;
   font-weight: bolder;
+  font-size: 16px;
 }
 
 .pagination-custom {
   text-align: center;
 }
-

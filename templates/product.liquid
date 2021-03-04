@@ -1,61 +1,80 @@
-<style>
-  body {background-color: #fafafa;}
-</style>
-
-<header class="header">
-  <div class="header__fraction">
-    <a id="header-logo" class="header__logo" href="https://symptom-msk.myshopify.com"></a>
-  </div>
-  <div class="header__fraction">
-    <button id="header-brands-button" class="header__button" type='button'>
-      <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
-      БРЕНДЫ
-    </button>
-    <button id="header-categories-button" class="header__button" type='button'>
-      <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
-      КАТЕГОРИИ
-    </button>
-  </div>
-  <div class="header__fraction">
-    <button id="header-subscribe-button" class="header__button" type='button'>
-      <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ПОДПИСАТЬСЯ
-    </button>
-  </div>
-  <div class="header__fraction">
-    <button id="header-login-button" class="header__button header__button_login" type='button'>
-      <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ВОЙТИ
-    </button>
-    <a id="header-wishes-button" class="header__button header__button_wishes"
-      href="https://symptom-msk.myshopify.com/wishes">
-      <span id="wishes-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ЖЕЛАНИЯ
-    </a>
-    <a id="header-cart-button" class="header__button header__button_cart"
-      href="https://symptom-msk.myshopify.com/cart">
-      <span id="cart-outline" class="header__button-outline header__button-outline_hidden"></span>
-      КОРЗИНА(00)
-    </a>
-  </div>
-</header>
-
 <div class="item">
   <div class="item__info">
-    <!-- <button class="back-button">
-      <div class="back-button__arrow"></div><span class="back-button__text">Назад</span>
-    </button> -->
+    <button class="back-button">
+      <a href="javascript:history.back()" class="back-button__text">Назад</a>
+    </button>
     <h1 class="item__brand">{{ product.title }}</h1>
+    <span class="item__price">{{ product.price | money }}</span>
     <!-- <h2 class="item__name"></h2> -->
     <p class="item__description">{{ product.description }}</p>
     <!-- <span class="item__status">{{ product.available }}</span> -->
-    <span class="item__price">{{ product.price | money }}</span>
-    <a href="./shipping_and_payment.html" class="item__shipping">Доставка и возврат</a>
+    <a href="/pages/shipping_and_payment.html" class="item__shipping">Доставка и возврат</a>
   </div>
 
   <div class="item__image-wrapper">
     <img class="item__image" src="{{ product | img_url: '400x400' }}" alt="{{ product.title }}">
   </div>
+  <div class="item__image-collection">
+    <div class="photos__item photos__item--main">
+      {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+      {%- for image in product.images -%}
+        <div class="product-single__photo product__photo-container product__photo-container-{{ section.id }} js{% unless image == featured_image %} hide{% endunless %}"
+             id="ProductPhoto"
+             style="max-width: {% include 'image-width' with image: image, width: 480 %}px;"
+             data-image-id="{{ image.id }}">
+          <a href="{{ image | img_url: '700x700' }}"
+             class="js-modal-open-product-modal product__photo-wrapper product__photo-wrapper-{{ section.id }}"
+             style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+            {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <img class="lazyload{% unless image == featured_image %} lazypreload{% endunless %}"
+              src="{{ image | img_url: '150x150' }}"
+              data-src="{{ img_url }}"
+              data-widths="[180, 240, 360, 480, 720, 960, 1080, 1296, 1512, 1728, 2048]"
+              data-aspectratio="{{ image.aspect_ratio }}"
+              data-sizes="auto"
+              alt="{{ image.alt | escape }}">
+          </a>
+        </div>
+      {%- endfor -%}
+      <noscript>
+        <a href="{{ featured_image | img_url: '700x700' }}">
+          <img src="{{ featured_image | img_url: product_image_size }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg-{{ section.id }}">
+        </a>
+      </noscript>
+    </div>
+  </div>
+
+  {% if product.images.size > 1 %}
+    <div class="photos__item photos__item--thumbs">
+      <div class="product-single__thumbnails product-single__thumbnails-{{ section.id }}{% unless product.images.size > 2 %} product-single__thumbnails--static{% endunless %}">
+        {% for image in product.images %}
+          <div class="product-single__thumbnail-item product-single__thumbnail-item-{{ section.id }}{% if image == featured_image %} is-active{% endif %}" data-image-id="{{ image.id }}">
+            <a href="{{ image.src | img_url: product_image_size }}" data-zoom="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail product-single__thumbnail-{{ section.id }}">
+              <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if product.images.size > 2 %}
+    {% comment %}
+      Add SVG icon snippets to an object for custom slider arrows
+    {% endcomment %}
+    <script>
+      {% capture arrow_left %}{% include 'icon-arrow-left' %}{% endcapture %}
+      {% capture arrow_right %}{% include 'icon-arrow-right' %}{% endcapture %}
+      {% capture arrow_up %}{% include 'icon-arrow-up' %}{% endcapture %}
+      {% capture arrow_down %}{% include 'icon-arrow-down' %}{% endcapture %}
+      var sliderArrows = {
+        left: {{ arrow_left | json }},
+        right: {{ arrow_right | json }},
+        up: {{ arrow_up | json }},
+        down: {{ arrow_down | json }}
+      }
+    </script>
+  {% endif %}
 
   <div class="item__order">
     <h4 class="item__radio-heading">Материал:</h4>

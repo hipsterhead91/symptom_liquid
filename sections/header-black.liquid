@@ -1,68 +1,38 @@
-<div class="mobileHide">
-  <header class="header header_two-colored">
-    <div class="header__fraction">
-      <a id="header-logo" class="header__logo header__logo_white" href="/index"></a>
-    </div>
-    <div class="header__fraction">
-      <button id="header-brands-button" class="header__button header__button_white" type='button'>
-        <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
-        БРЕНДЫ
-      </button>
-      <button id="header-categories-button" class="header__button header__button_white" type='button'>
-        <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
-        КАТЕГОРИИ
-      </button>
-    </div>
-    <div class="header__fraction">
-      <button id="header-subscribe-button" class="header__button header__button_white" type='button'>
-        <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
-        ПОДПИСАТЬСЯ
-      </button>
-    </div>
-    <div class="header__fraction">
-      <button id="header-login-button" class="header__button header__button_login header__button_white" type='button'>
-        <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
-        ВОЙТИ
-      </button>
-      <a id="header-finder-button" class="header__button finder header__button_white"
-        href="#">
-        <span id="finder-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
-        ПОИСК
-      </a>
-      <a id="header-cart-button" class="header__button header__button_cart header__button_white"
-        href="/cart">
-        <span id="cart-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
-        КОРЗИНА(00)
-      </a>
-    </div>
-  </header>
-</div>
-
-<!-- <div class="mobileShow">
-  <div class="menu-popup menu-popup_hidden">
-    <div class="fake-header">
-      <a href="./index.html">
-        <div class="fake-logo"></div>
-      </a>
-      <button class="menu-close-button">Закрыть</button>
-    </div>
-    <nav class="menu">
-      <ul class="menu-list">
-        <li class="menu-list-element"><a class="menu-link" href="./pages/brands/brands.html">Бренды</a></li>
-        <li class="menu-list-element"><a class="menu-link" href="./pages/categorys/categorys.html">Категории</a></li>
-      </ul>
-      <ul class="menu-list">
-        <li class="menu-list-element"><a class="menu-link" href="./pages/log_in/log_in.html">Войти</a></li>
-        <li class="menu-list-element"><a class="menu-link" href="./pages/wishes/wishes.html">Желания</a></li>
-        <li class="menu-list-element"><a class="menu-link" href="./pages/cart/cart.html">Корзина(00)</a></li>
-      </ul>
-      <ul class="menu-list">
-        <li class="menu-list-element"><a class="menu-link" href="#">Подписаться</a></li>
-        <li class="menu-list-element"><a class="menu-link" href="./pages/about_us/about_us.css">О нас</a></li>
-      </ul>
-    </nav>
-  </div>
-</div> -->
+<header class="header">
+	<div class="header__fraction">
+		<a id="header-logo" class="header__logo" href="/index"></a>
+	</div>
+	<div class="header__fraction">
+		<button id="header-brands-button" class="header__button" type='button'>
+			<span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
+			БРЕНДЫ
+		</button>
+		<button id="header-categories-button" class="header__button" type='button'>
+			<span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
+			КАТЕГОРИИ
+		</button>
+	</div>
+	<div class="header__fraction">
+		<button id="header-subscribe-button" class="header__button" type='button'>
+			<span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
+			ПОДПИСАТЬСЯ
+		</button>
+	</div>
+	<div class="header__fraction">
+		<button id="header-login-button" class="header__button header__button_login" type='button'>
+			<span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
+			ВОЙТИ
+		</button>
+		<a id="header-finder-button" class="header__button finder" href="#">
+			<span id="finder-outline" class="header__button-outline header__button-outline_hidden"></span>
+			ПОИСК
+		</a>
+		<a id="header-cart-button" class="header__button header__button_cart" href="/cart">
+			<span id="cart-outline" class="header__button-outline"></span>
+			КОРЗИНА(00)
+		</a>
+	</div>
+</header>
 
 <!-- MENU: BRANDS -->
 <div id="brands-menu" class="menu menu_hidden">
@@ -340,3 +310,12 @@
 	</div>
 </div>
 </form>
+
+{{ 'common.js' | asset_url | script_tag }}
+{{ 'index.js' | asset_url | script_tag }}
+{{ 'easings.min.js' | asset_url | script_tag }}
+{{ 'easings.min.js.map' | asset_url | script_tag }}
+{{ 'scrolloverflow.js' | asset_url | script_tag }}
+{{ 'scrolloverflow.min.js' | asset_url | script_tag }}
+{{ 'scrolloverflow.min.js.map' | asset_url | script_tag }}
+{{ 'swiped-events.min.js' | asset_url | script_tag }}

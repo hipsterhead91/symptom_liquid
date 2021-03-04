@@ -23,6 +23,7 @@ const cartOutline = document.querySelector('#cart-outline');
 const menus = document.querySelectorAll('.menu');
 const brandsMenu = document.querySelector('#brands-menu');
 const categoriesMenu = document.querySelector('#categories-menu');
+const finderMenu = document.querySelector('#finder-menu');
 
 const forms = document.querySelectorAll('.form');
 const subscribeForm = document.querySelector('#subscribe-form');
@@ -120,8 +121,9 @@ if(recoveryButton){
 
 if(headerFinderButton){
 	headerFinderButton.addEventListener('click', () => {
-		hideAllOutlines();
+		hideAllPopups();
 		showOutline(finderOutline);
+		showPopup(finderMenu, 'menu_hidden');
 	});
 };
 

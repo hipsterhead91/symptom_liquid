@@ -3,48 +3,6 @@
   {% endfor %}
 {% endpaginate %} -->
 
-<style>
-  body {background-color: #fafafa;}
-</style>
-
-<header class="header">
-  <div class="header__fraction">
-    <a id="header-logo" class="header__logo" href="https://symptom-msk.myshopify.com"></a>
-  </div>
-  <div class="header__fraction">
-    <button id="header-brands-button" class="header__button" type='button'>
-      <span id="brands-outline" class="header__button-outline header__button-outline_hidden"></span>
-      БРЕНДЫ
-    </button>
-    <button id="header-categories-button" class="header__button" type='button'>
-      <span id="categories-outline" class="header__button-outline header__button-outline_hidden"></span>
-      КАТЕГОРИИ
-    </button>
-  </div>
-  <div class="header__fraction">
-    <button id="header-subscribe-button" class="header__button" type='button'>
-      <span id="subscribe-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ПОДПИСАТЬСЯ
-    </button>
-  </div>
-  <div class="header__fraction">
-    <button id="header-login-button" class="header__button header__button_login" type='button'>
-      <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ВОЙТИ
-    </button>
-    <a id="header-wishes-button" class="header__button header__button_wishes"
-      href="https://symptom-msk.myshopify.com/wishes">
-      <span id="wishes-outline" class="header__button-outline header__button-outline_hidden"></span>
-      ЖЕЛАНИЯ
-    </a>
-    <a id="header-cart-button" class="header__button header__button_cart"
-      href="https://symptom-msk.myshopify.com/cart">
-      <span id="cart-outline" class="header__button-outline header__button-outline_hidden"></span>
-      КОРЗИНА(00)
-    </a>
-  </div>
-</header>
-
 <div class="text-page text-page_divided text-page_brand">
   <div class="text-page__left-half">
     <h1 class="heading">{{ collection.title }}</h1>
@@ -54,20 +12,33 @@
   </div>
 </div>
 
+  <!-- {% for tag in collection.tags %}
+    {{ tag | link_to_tag: tag }}
+  {% endfor %} -->
+
 
 <!-- FILTERS -->
 <div class="filters">
   <label class="filters__filter">
     <input class="filters__true-radio" type="radio" name="filter" checked>
+    <span class="filters__fake-radio">НОВИНКИ</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter" checked>
+    <span class="filters__fake-radio">МИНИМАЛЬНАЯ&nbsp;ЦЕНА</span>
+  </label>
+  <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter" checked>
+    <span class="filters__fake-radio">МАКСИМАЛЬНАЯ&nbsp;ЦЕНА</span>
+  </label>
+  <!-- <label class="filters__filter">
+    <input class="filters__true-radio" type="radio" name="filter" checked>
     <span class="filters__fake-radio">Все</span>
   </label>
-  <!-- {% for tag in collection.tags %}
-    {{ tag | link_to_tag: tag }}
-  {% endfor %} -->
-  <!-- <label class="filters__filter">
+  <label class="filters__filter">
     <input class="filters__true-radio" type="radio" name="filter">
     <span class="filters__fake-radio">Желания</span>
-  </label> -->
+  </label>
   <label class="filters__filter">
     <input class="filters__true-radio" type="radio" name="filter">
     <span class="filters__fake-radio">Подвески</span>
@@ -113,7 +84,7 @@
   <label class="filters__filter">
     <input class="filters__true-radio" type="radio" name="filter">
     <span class="filters__fake-radio">Твёрдые&nbsp;духи</span>
-  </label>
+  </label> -->
 </div>
 
 <div class="grid-container">
@@ -193,3 +164,4 @@
   {% endif %}
 </div>
 {% endpaginate %}
+{% endcomment  %}
