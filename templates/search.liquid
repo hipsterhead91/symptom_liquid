@@ -1,22 +1,30 @@
-{% paginate search.results by 10 %}
-  <form action="/search" method="get" role="search">
-    <input type="search" name="q" value="{{ search.terms | escape }}">
-    <button type="submit">search</button>
+{% paginate search.results by 100 %}
+<div class="text-page text-page_divided text-page_brand">
+  <form action="/search" method="get" role="search" class="search__result">
+    <input type="search" name="q" value="{{ search.terms | escape }}" class="heading">
   </form>
-
+</div>
+<div class="grid-container">
   {% if search.performed %}
-    {% for item in search.results %}
-      {% if item.featured_image %}
-        <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
-          {{ item.featured_image.src | img_url: 'medium' | img_tag: item.featured_image.alt }}
-        </a>
-      {% endif %}
-      <h5>{{ item.title | link_to: item.url }}</h5>
-      <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
+    {% for product in search.results %}
+      {% for product in collection.products %}
+        {% assign featured = product %}
+        <div class="grid__item {{grid_item_width}}">
+          {% include 'product-grid-item' %}
+        </div>
     {% else %}
-      no results
+      <span class="search-result__text">Мы&nbsp;ничего&nbsp;не&nbsp;нашли:&nbsp;(</span>
     {% endfor %}
-  {% endif %}
-
-  {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
+</div>
 {% endpaginate %}
+
+<div class="grid-container">
+  {% assign grid_item_width = 'wide--one-fifth large--one-quarter medium-down--one-half' %}
+  {%- assign product_width = 319 -%}
+  {% for product in collection.products %}
+    {% assign featured = product %}
+    <div class="grid__item {{grid_item_width}}">
+      {% include 'product-grid-item' %}
+    </div>
+  {% else %}
+</div>

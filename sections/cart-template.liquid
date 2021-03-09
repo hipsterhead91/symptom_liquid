@@ -45,9 +45,9 @@
   Cart is empty
 {% endif %} -->
 
-<div class="cart">
+<main class="cart">
   <div class="cart-items">
-    <h1 class="heading">2 товара</h1>
+    <h1 class="heading">{{ cart.item_count }} {{ cart.item_count | pluralize: 'товар', 'товаров' }}</h1>
     <div class="cart-item">
       <div class="cart-item__info">
         <span class="cart-item__spec">Anna Maslovskaya</span>
@@ -152,21 +152,21 @@
     </div>
     <div class="input input_order-s">
       <h3 class="input__heading">Промокод:</h3>
-      <input class="input__field" type="text" placeholder="kaIF30">
+      <input class="input__field" type="text" placeholder="KaiF30">
       <span class="input__error">Укажите индекс</span>
     </div>
     <p class="paragraph paragraph_order">Ваши личные данные будут использоваться для обработки ваших заказов,
       для упрощения использования нашего веб-сайта и для других целей,
-      описанных в нашей <a class="paragraph__link" href="./confidentiality.html"> политике конфиденциальности</a>.</p>
+      описанных в нашей <a class="paragraph__link" href="/pages/confidential"> политике конфиденциальности</a>.</p>
     <label class="checkbox checkbox_order">
       <div>
         <input class="checkbox__true-checkbox" type="checkbox" checked>
         <div class="checkbox__fake-checkbox"></div>
       </div>
       <p class="checkbox__description">Я прочитал и согласен с правилами сайта согласно тексту <a
-          class="paragraph__link" href="./offer.html"> оферты</a>.</p>
+          class="paragraph__link" href="/pages/offer"> оферты</a>.</p>
     </label>
     <button class="black-button black-button_order">Оплата</button>
   </form>
-</div>
+</main>
 

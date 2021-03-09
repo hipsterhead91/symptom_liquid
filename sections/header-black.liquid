@@ -23,13 +23,13 @@
 			<span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
 			ВОЙТИ
 		</button>
-		<a id="header-finder-button" class="header__button finder" href="#">
-			<span id="finder-outline" class="header__button-outline header__button-outline_hidden"></span>
-			ПОИСК
-		</a>
+    <button id="header-finder-button" class="header__button " type='button'>
+      <span id="finder-outline" class="header__button-outline header__button-outline_hidden"></span>
+      ПОИСК
+    </button>
 		<a id="header-cart-button" class="header__button header__button_cart" href="/cart">
 			<span id="cart-outline" class="header__button-outline"></span>
-			КОРЗИНА(00)
+      КОРЗИНА({{ cart.item_count }})
 		</a>
 	</div>
 </header>
@@ -212,7 +212,7 @@
 		<div class="checkbox__fake-checkbox"></div>
 		</div>
 		<p class="checkbox__description">Нажимая кнопку «Подписаться», вы даете согласие на обработку ваших
-		персональных данных согласно положениям <a class="paragraph__link" href="./pages/confidentiality.html"> по
+		персональных данных согласно положениям <a class="paragraph__link" href="/pages/confidential"> по
 			ссылке.</a></p>
 	</label>
 	<button class="black-button submit-button" type="submit">Подписаться</button>
@@ -283,7 +283,7 @@
 		<div class="checkbox__fake-checkbox"></div>
 		</div>
 		<p class="checkbox__description">Нажимая кнопку «Регистрация», вы даете согласие на обработку ваших
-		персональных данных согласно положениям <a class="paragraph__link" href="./pages/confidentiality.html"> по
+		персональных данных согласно положениям <a class="paragraph__link" href="/pages/confidential"> по
 			ссылке.</a></p>
 	</label>
 	<button class="black-button submit-button" type="submit">Регистрация</button>
@@ -311,11 +311,38 @@
 </div>
 </form>
 
+<!-- FINDER -->
+<div id="finder-menu" class="menu__finder menu_hidden">
+  <div class="search-form__container" data-search-form-container>
+    <form class="search-form search-bar__form" action="{{ routes.search_url }}" method="get" role="search">
+      <div class="search-form__input-wrapper">
+        <input
+          type="text"
+          name="q"
+          placeholder="{{ 'Поиск' }}"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-owns="predictive-search-results"
+          aria-expanded="false"
+          aria-label="{{ 'Поиск'}}"
+          aria-haspopup="listbox"
+          class="search-bar__input"
+          data-predictive-search-drawer-input
+          data-base-url="{{ routes.search_url }}"
+        />
+        <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
+        <div class="predictive-search-wrapper predictive-search-wrapper--drawer" data-predictive-search-mount="drawer"></div>
+      </div>
+
+      <button class="search-bar__submit"
+        type="submit"
+        data-search-form-submit>
+        {% include 'icon-search' %}
+      </button>
+    </form>
+  </div>
+</div>
+
 {{ 'common.js' | asset_url | script_tag }}
 {{ 'index.js' | asset_url | script_tag }}
-{{ 'easings.min.js' | asset_url | script_tag }}
-{{ 'easings.min.js.map' | asset_url | script_tag }}
-{{ 'scrolloverflow.js' | asset_url | script_tag }}
-{{ 'scrolloverflow.min.js' | asset_url | script_tag }}
-{{ 'scrolloverflow.min.js.map' | asset_url | script_tag }}
-{{ 'swiped-events.min.js' | asset_url | script_tag }}
+{{ 'cart.js' | asset_url | script_tag }}

@@ -294,7 +294,7 @@ button:hover, a:hover {
   height: 48px;
   margin-right: 12px;
   border-radius: 50%;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
   /* background-color: #0F0F0F; */
   background-image: url(./images/circle-like-white.svg);
   background-size: 50%;
@@ -527,7 +527,7 @@ button:hover, a:hover {
   cursor: pointer;
 }
 
-.filters__fake-radio::before {
+ .filters__fake-radio::before {
   position: absolute;
   top: -12px;
   left: -28px;
@@ -537,6 +537,7 @@ button:hover, a:hover {
   opacity: 0;
   border: 1px solid #0f0f0f;
   border-radius: 50%;
+  /* pointer-events: unset; */
 }
 
 .filters__true-radio:checked +
@@ -603,7 +604,7 @@ button:hover, a:hover {
   height: 48px;
   content: "";
   opacity: 0;
-  background-image: url(./images/round-size-cross.svg);
+  background-image: url({{ 'size_cross.png' | asset_img_url: 'master' }});
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -678,7 +679,7 @@ button:hover, a:hover {
   height: 48px;
   content: "";
   opacity: 0;
-  background-image: url(./images/oval-size-cross.svg);
+  background-image: url({{ 'sides_cross.png' | asset_img_url: 'master' }});
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -753,7 +754,7 @@ button:hover, a:hover {
   height: 48px;
   content: "";
   opacity: 0;
-  background-image: url(./images/oval-size-cross.svg);
+  background-image: url({{ 'sides_cross.png' | asset_img_url: 'master' }});
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -786,6 +787,11 @@ button:hover, a:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* width: 100%;
+  margin-bottom: 7%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 117px);
+  grid-gap: 10px; */
 }
 
 .materials_bracelet {
@@ -861,17 +867,17 @@ button:hover, a:hover {
 
 .materials__fake-radio_gold::before {
   width: 117px;
-  background-image: url(./images/gold-cross.svg);
+  background-image: url({{ 'material_gold_cross.png' | asset_img_url: 'master' }});
 }
 
 .materials__fake-radio_silver::before {
   width: 128px;
-  background-image: url(./images/silver-cross.svg);
+  background-image: url({{ 'material_silver_cross.png' | asset_img_url: 'master' }});
 }
 
 .materials__fake-radio_bronze::before {
   width: 116px;
-  background-image: url(./images/bronze-cross.svg);
+  background-image: url({{ 'material_bronze_cross.png' | asset_img_url: 'master' }});
 }
 
 .materials__true-radio:checked +
@@ -989,7 +995,7 @@ button:hover, a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 572px;
   padding-top: 64px;
@@ -1084,7 +1090,7 @@ button:hover, a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 592px;
   padding-top: 114px;
@@ -1503,7 +1509,6 @@ button:hover, a:hover {
 }
 
 .text-page__registered {
-  margin-top: auto;
   margin-bottom: 40px;
   font-size: 14px;
 }
@@ -1524,6 +1529,19 @@ button:hover, a:hover {
 
 .text-page__list-element:last-child {
   padding-bottom: 0;
+}
+
+.text-page__contacts {
+  height: 2160px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.text-page__contact-address {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: dense;
+  grid-row-gap: 5em;
 }
 
 
@@ -2077,12 +2095,17 @@ button:hover, a:hover {
   z-index: 2;
   max-width: 22.5%;
   min-width: 360px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-row-gap: 1em;
+  grid-auto-rows: minmax(max-content, 2fr);
+}
+
+.item__info-grid {
 }
 
 .item__brand {
-  margin-top: 15%;
+  margin-top: 0;
   font-size: 36px;
   text-transform: uppercase;
 }
@@ -2127,7 +2150,6 @@ button:hover, a:hover {
 }
 
 .item__price {
-  position: absolute;
   top: 43%;
   left: 3%;
   font-size: 36px;
@@ -2256,9 +2278,19 @@ button:hover, a:hover {
   width: 100%;
 }
 
+.photos__item {
+  display: inline-flex;
+}
+
+.photos__item--thumbs {
+
+}
+
 
 
 /*  styles from shopify  */
+
+/* collection-template  */
 
 .grid-container {
   display: grid;
@@ -2301,4 +2333,94 @@ button:hover, a:hover {
 
 .pagination-custom {
   text-align: center;
+}
+
+/* finder  */
+
+.menu__finder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 592px;
+  padding-top: 64px;
+  background-color: #FAFAFA;
+  transition: visibility 0.3s, opacity 0.3s ease-out;
+}
+
+.search-form__container{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 175px;
+  padding-left: 64px;
+  padding-right: 59px;
+  background-color:  #FAFAFA;
+}
+
+.search-bar__form {
+  flex: 1 1 100%;
+  position: relative;
+  max-width: 750px;
+  border: 1px solid;
+}
+
+.search-form__input-wrapper {
+  position: relative;
+}
+
+.search-bar__input {
+  padding-right: 45px;
+  width: 100%;
+  min-height: 44px;
+  font-size: 18px;
+  border: none;
+  border: 1px solid #0F0F0F;
+}
+
+.search-bar__submit {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  padding: 0 12px;
+  height: 100%;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  color: #0F0F0F;
+}
+
+.search-bar__submit .icon {
+  position: relative;
+  top: -1px;
+  width: 1.2rem;
+  height: auto;
+}
+
+.search-bar__actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.search-bar__close {
+  padding: calc(10em / 16) 0.75em;
+  margin-right: -10px;
+}
+
+.predictive-search-wrapper {
+  position: absolute;
+  right: auto;
+  left: auto;
+  max-width: 748px;
+}
+
+.search-result__text {
+  padding: 150px 0px 0px 150px;
+  font-size: 100px;
 }

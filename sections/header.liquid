@@ -1,7 +1,7 @@
 <div class="mobileHide">
   <header class="header header_two-colored">
     <div class="header__fraction">
-      <a id="header-logo" class="header__logo header__logo_white" href="/index"></a>
+      <a id="header-logo" class="header__logo header__logo_white"href="/index"></a>
     </div>
     <div class="header__fraction">
       <button id="header-brands-button" class="header__button header__button_white" type='button'>
@@ -24,15 +24,13 @@
         <span id="login-outline" class="header__button-outline header__button-outline_hidden"></span>
         ВОЙТИ
       </button>
-      <a id="header-finder-button" class="header__button finder header__button_white"
-        href="#">
-        <span id="finder-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
+      <button id="header-finder-button" class="header__button  header__button_white" type='button'>
+        <span id="finder-outline" class="header__button-outline header__button-outline_hidden"></span>
         ПОИСК
-      </a>
-      <a id="header-cart-button" class="header__button header__button_cart header__button_white"
-        href="/cart">
+      </button>
+      <a id="header-cart-button" class="header__button header__button_cart header__button_white" href="/cart">
         <span id="cart-outline" class="header__button-outline header__button-outline_white header__button-outline_hidden"></span>
-        КОРЗИНА(00)
+        КОРЗИНА({{ cart.item_count }})
       </a>
     </div>
   </header>
@@ -242,7 +240,7 @@
 		<div class="checkbox__fake-checkbox"></div>
 		</div>
 		<p class="checkbox__description">Нажимая кнопку «Подписаться», вы даете согласие на обработку ваших
-		персональных данных согласно положениям <a class="paragraph__link" href="./pages/confidentiality.html"> по
+		персональных данных согласно положениям <a class="paragraph__link" href="/pages/confidential"> по
 			ссылке.</a></p>
 	</label>
 	<button class="black-button submit-button" type="submit">Подписаться</button>
@@ -313,7 +311,7 @@
 		<div class="checkbox__fake-checkbox"></div>
 		</div>
 		<p class="checkbox__description">Нажимая кнопку «Регистрация», вы даете согласие на обработку ваших
-		персональных данных согласно положениям <a class="paragraph__link" href="./pages/confidentiality.html"> по
+		персональных данных согласно положениям <a class="paragraph__link" href="/pages/confidential"> по
 			ссылке.</a></p>
 	</label>
 	<button class="black-button submit-button" type="submit">Регистрация</button>
@@ -340,3 +338,36 @@
 	</div>
 </div>
 </form>
+
+<!-- FINDER -->
+<div id="finder-menu" class="menu__finder menu_hidden">
+  <div class="search-form__container" data-search-form-container>
+    <form class="search-form search-bar__form" action="{{ routes.search_url }}" method="get" role="search">
+      <div class="search-form__input-wrapper">
+        <input
+          type="text"
+          name="q"
+          placeholder="{{ 'Поиск' }}"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-owns="predictive-search-results"
+          aria-expanded="false"
+          aria-label="{{ 'Поиск'}}"
+          aria-haspopup="listbox"
+          class="search-bar__input"
+          data-predictive-search-drawer-input
+          data-base-url="{{ routes.search_url }}"
+        />
+        <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
+        <div class="predictive-search-wrapper predictive-search-wrapper--drawer predictive-search-wrapper--visible" data-predictive-search-mount="drawer"></div>
+      </div>
+
+      <button class="search-bar__submit"
+        type="submit"
+        data-search-form-submit>
+        {% include 'icon-search' %}
+      </button>
+    </form>
+
+  </div>
+</div>
