@@ -29,7 +29,7 @@
     </button>
 		<a id="header-cart-button" class="header__button header__button_cart" href="/cart">
 			<span id="cart-outline" class="header__button-outline"></span>
-      КОРЗИНА({{ cart.item_count }})
+      КОРЗИНА({{ cart.item_count | prepend: '0' }})
 		</a>
 	</div>
 </header>
