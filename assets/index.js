@@ -156,8 +156,11 @@ footer.addEventListener('wheel', event => {
 });
 
 // закрываем футер кликом по секции
-lastSection.addEventListener('click', () => {
-	if (!footer.classList.contains('footer_hidden')) hideFooter();
+lastSection.addEventListener('click', (event) => {
+	if (!footer.classList.contains('footer_hidden')) {
+		event.preventDefault();
+		hideFooter();
+	}
 });
 
 // закрываем футер кликом по меню

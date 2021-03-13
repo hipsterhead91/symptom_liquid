@@ -12,7 +12,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="description" content="{{ page_description | escape }}">
   {{ 'theme.css' | asset_url | stylesheet_tag }}
-  {{ 'cart.js' | asset_url | script_tag }}
+  <!-- Я вообще не понял, зачем здесь cart.js, поэтому закомментировал его, ибо он вызывает ошибки в консоли -->
+  <!-- {{ 'cart.js' | asset_url | script_tag }} -->
   {{ content_for_header }}
 </head>
 
