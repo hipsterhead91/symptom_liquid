@@ -34,26 +34,26 @@
   {% section 'footer' %}
 
   <!-- COMMON SCRIPTS -->
-  {{ 'common-header.js' | asset_url | script_tag }}
-  {{ 'common-brands-menu.js' | asset_url | script_tag }}
-  {{ 'common-categories-menu.js' | asset_url | script_tag }}
-  {{ 'common-validation.js' | asset_url | script_tag }}
-  {{ 'common-chatra.js' | asset_url | script_tag }}
+  {{ 'header.js' | asset_url | script_tag }}
+  {{ 'brands-menu.js' | asset_url | script_tag }}
+  {{ 'categories-menu.js' | asset_url | script_tag }}
+  {{ 'validation.js' | asset_url | script_tag }}
+  {{ 'chatra.js' | asset_url | script_tag }}
 
   <!-- SCRIPTS FOR INDEX -->
   {% if template == 'index' %}
   {{ 'fullpage.js' | asset_url | script_tag }}
-  {{ 'limited-index.js' | asset_url | script_tag }}
+  {{ 'index.js' | asset_url | script_tag }}
   {% endif %}
 
   <!-- SCRIPTS FOR COLLECTIONS -->
   {% if template == 'collection' %}
-  {{ 'limited-collection.js' | asset_url | script_tag }}
+  {{ 'collection.js' | asset_url | script_tag }}
   {% endif %}
 
   <!-- SCRIPTS FOR CART -->
   {% if template == 'cart' %}
-  {{ 'limited-cart.js' | asset_url | script_tag }}
+  {{ 'cart.js' | asset_url | script_tag }}
   {% endif %}
 
 </body>
