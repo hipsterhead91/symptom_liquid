@@ -26,7 +26,7 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6, p,
-span, li, a, input, button {
+span, li, a, input, button, div {
   font-family: "Nimbus Sans", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -1220,11 +1220,11 @@ button:hover, a:hover {
   background-image: url({{ 'fullpage-section-2.jpg' | asset_img_url: 'master' }});
 }
 
-.section_3 {
+/* .section_3 {
   background-image: url({{ 'fullpage-section-3.jpg' | asset_img_url: 'master' }});
-}
+} */
 
-.section_4 {
+.section_3 {
   background-image: url({{ 'fullpage-section-4.jpg' | asset_img_url: 'master' }});
 }
 
@@ -1494,6 +1494,13 @@ button:hover, a:hover {
   background-image: url({{ 'chat-white.png' | asset_img_url: 'master' }});;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#open_chatra_preorder {
+  width: 29px;
+  height: 5px;
+  font: bolder;
+  text-decoration: underline;
 }
 
 
@@ -2322,6 +2329,7 @@ button:hover, a:hover {
 }
 
 .item__preorder-info {
+  padding-top: 25px;
   font-size: 14px;
 }
 
