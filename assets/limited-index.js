@@ -165,15 +165,15 @@ lastSection.addEventListener('click', (event) => {
 
 // закрываем футер кликом по меню
 // ВАЖНО: переменная menus берётся из common.js
-menus.forEach(menu => {
-	menu.addEventListener('click', () => hideFooter());
-});
+// menus.forEach(menu => {
+// 	menu.addEventListener('click', () => hideFooter());
+// });
 
 // закрываем футер кликом по форме
 // ВАЖНО: переменная forms берётся из common.js
-forms.forEach(form => {
-	form.addEventListener('click', () => hideFooter());
-});
+// forms.forEach(form => {
+// 	form.addEventListener('click', () => hideFooter());
+// });
 
 
 

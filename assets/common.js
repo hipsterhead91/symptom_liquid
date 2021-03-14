@@ -495,7 +495,6 @@ signInFormValidator.enableValidation();
 
 
 // ЧАТРА
-
 const chatraButton = document.querySelector('#open_chatra');
 chatraButton.addEventListener('click', () => {
 	const chatraWindow = document.querySelector('.chatra--webkit');
@@ -503,3 +502,15 @@ chatraButton.addEventListener('click', () => {
 		? Chatra('minimizeWidget')
 		: Chatra('openChat', true)
 });
+
+
+
+
+
+// ФИЛЬТРЫ КАТЕГОРИЙ
+const filterNew = document.querySelector('#filter-new');
+const filterMinPrice = document.querySelector('#filter-min-price');
+const filterMaxPrice = document.querySelector('#filter-max-price');
+const filterNewOutline = document.querySelector('#filter-new-outline');
+const filterMinPriceOutline = document.querySelector('#filter-min-price-outline');
+const filterMaxPriceOutline = document.querySelector('#filter-max-price-outline');

@@ -7,7 +7,7 @@
       </li>
       <li class="footer__nav-list-element footer__nav-link">Чат:
       </li>
-      <button id="open_chatra"></button>
+      <button class="footer__chatra-button"></button>
       <!-- <button id="open_chatra" onclick="Chatra('openChat', true)"></button> -->
     </ul>
     <ul class="footer__nav-list footer__contacts">
@@ -46,7 +46,7 @@
   window.ChatraSetup = {
     buttonStyle: 'round',
     buttonSize: 60,
-    zIndex: -99,
+    zIndex: -90,
   };
 </script>
 
@@ -61,6 +61,8 @@
     s.src = 'https://call.chatra.io/chatra.js';
     if (d.head) d.head.appendChild(s);
   })(document, window, 'Chatra');
+
+
 </script>
 
 <!-- /Chatra {/literal} -->
