@@ -11,7 +11,9 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_img_url: '32x32' }}" type="image/ico">
+  {% if template == 'index' %}
   {{ 'fullpage.css' | asset_url | stylesheet_tag }}
+  {% endif %}
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
 </head>
@@ -44,11 +46,18 @@
   {% if template == 'index' %}
   {{ 'fullpage.js' | asset_url | script_tag }}
   {{ 'index.js' | asset_url | script_tag }}
+  {{ 'swiped-events.min.js' | asset_url | script_tag }}
   {% endif %}
 
   <!-- SCRIPTS FOR COLLECTIONS -->
   {% if template == 'collection' %}
   {{ 'collection.js' | asset_url | script_tag }}
+  {% endif %}
+
+  <!-- SCRIPTS FOR PRODUCT -->
+  {% if template == 'product' %}
+  {{ 'siema.js' | asset_url | script_tag }}
+  {{ 'product.js' | asset_url | script_tag }}
   {% endif %}
 
   <!-- SCRIPTS FOR CART -->
